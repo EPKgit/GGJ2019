@@ -4,16 +4,32 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class Draggable : MonoBehaviour, IDragHandler, IEndDragHandler, IPointerEnterHandler, IPointerExitHandler
+public class DraggableCard : MonoBehaviour, IDragHandler, IEndDragHandler, IPointerEnterHandler, IPointerExitHandler
 {
+    public Card card;
     public Vector2 originalPosition;
     public GameObject popUpWindow;
     public bool dragging;
+
+
+    //Card Display Data
+    public Text cardName;
+    public Image cardImage;
+    public Text cardAbilityText;
+    public Text cardFlavorText;
 
     void Start()
     {
         originalPosition = this.transform.position;
         dragging = false;
+    }
+
+    public void LoadCard()
+    {
+        cardName.text = card.cardName;
+        cardImage.sprite = card.cardImage;
+        cardAbilityText.text = card.cardAbilityText;
+        cardFlavorText.text = card.cardFlavorText;
     }
     
     //Handles dragging of Game Object in the UI with the mouse cursor.
