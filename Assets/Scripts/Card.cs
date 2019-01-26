@@ -11,4 +11,5 @@ public class Card : MonoBehaviour
     public string cardFlavorText;
     public string cardAbilityText;
     //Ability cardAbility;
+    //each UI card should have a Card datatype of the card itself
 }
