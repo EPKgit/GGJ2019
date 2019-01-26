@@ -6,4 +6,5 @@ public class Player : MonoBehaviour
 {
     public List<Card> playerHand;
     public Planet currentPlanet;
+    public int fuel;
 }
