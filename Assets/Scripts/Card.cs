@@ -4,15 +4,11 @@ using UnityEngine;
 
 public class Card : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public string cardName;
+    public string cardType;
+    public string cardSuit;
+    public Sprite cardImage;
+    public string cardFlavorText;
+    public string cardAbilityText;
+    //Ability cardAbility;
 }
