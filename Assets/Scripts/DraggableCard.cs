@@ -6,10 +6,11 @@ using UnityEngine.UI;
 
 public class DraggableCard : MonoBehaviour, IDragHandler, IEndDragHandler, IPointerEnterHandler, IPointerExitHandler
 {
-    public Card card;
-    public Vector2 originalPosition;
+    [HideInInspector] public Card card;
+    [HideInInspector] public Vector2 originalPosition;
+    [HideInInspector] public CommerceManager commerceManager;
     public GameObject popUpWindow;
-    public bool dragging;
+    [HideInInspector] public bool dragging;
 
 
     //Card Display Data

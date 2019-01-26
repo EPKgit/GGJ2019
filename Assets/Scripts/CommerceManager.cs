@@ -16,7 +16,7 @@ public class CommerceManager : MonoBehaviour
     public float marginY;
 
 
-    public bool actionTaken;
+    public bool hasTakenAction;
     public bool dragging;
 
 
@@ -25,13 +25,14 @@ public class CommerceManager : MonoBehaviour
     {
         Debug.Log("CommerceManager is enabled.");
         currentPlanet = player.currentPlanet;
-        actionTaken = false;
+        hasTakenAction = false;
         GenerateLayout();
     }
 
     void GenerateLayout()
     {
         GenerateCardLayout();
+        GenerateLandscape();
     }
 
     void GenerateCardLayout()
@@ -42,7 +43,6 @@ public class CommerceManager : MonoBehaviour
         float canvasTopBorder = tradingInterface.pixelRect.yMax - marginY;
         float handSpacingPlayer = (canvasRightBorder - canvasLeftBorder) / (player.playerHand.Count + 1);
         float handSpacingPlanet = (canvasRightBorder - canvasLeftBorder) / (currentPlanet.trades.Count + 1);
-        Debug.Log(player.playerHand.Count);
 
         //Generate interactble player hand.
         for (int i = 0; i < player.playerHand.Count; ++i)
@@ -70,7 +70,12 @@ public class CommerceManager : MonoBehaviour
 
     void GenerateLandscape()
     {
-        this.transform.GetChild(0).GetComponent<Image>().sprite = currentPlanet.background.sprite;
+        this.transform.GetChild(0).GetComponent<Image>().sprite = currentPlanet.background;
+    }
+
+    public void ActionTaken()
+    {
+        hasTakenAction = true;
     }
 
     //Trading/Refueling
