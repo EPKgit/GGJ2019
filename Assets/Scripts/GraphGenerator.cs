@@ -16,7 +16,7 @@ namespace GraphGeneration{
 
         /*  main for testing
         public static void Main(){
-            Graph graph = Build(4, 8, 20.0f, 20.0f, 2.0f, 2.0f, 0.6f);
+            Graph graph = Build(400, 400, 20.0f, 20.0f, 2.0f, 2.0f, 0.6f);
             Console.WriteLine("Nodes: {0}, Edges: {1}", graph.Nodes.Count, graph.Edges.Count);
         }
         //*/
@@ -31,7 +31,7 @@ namespace GraphGeneration{
                 //figure out if will disconnect
                 bool willDisconnect = false;
                 foreach(BuildingNode n in e.Nodes){
-                    willDisconnect |= n.cc.outgoingEdges <= 0;
+                    willDisconnect |= n.cc.outgoingEdges <= 1;
                 }
                 // add the edge
                 if(willDisconnect || Rand.NextDouble() < buildChance){ 
