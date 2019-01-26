@@ -54,7 +54,7 @@ public class DraggableCard : MonoBehaviour, IDragHandler, IEndDragHandler, IPoin
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-        Debug.Log("OnPointerOver");
+        //Debug.Log("OnPointerOver");
         if (!dragging)
         {
             popUpWindow.SetActive(true);
