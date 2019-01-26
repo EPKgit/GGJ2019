@@ -20,7 +20,14 @@ public class GenerationScript : MonoBehaviour
     IEnumerator Start()
     {
         yield return new WaitUntil( () => CameraController.instance != null);
-        RegenerateMap();
+        generatedObjects = new List<GameObject>();
+        foreach (Transform child in gameObject.transform) 
+        {
+            generatedObjects.Add(child.gameObject);
+        }
+        GenerateConnections();
+        CenterCamera();
+        //RegenerateMap();
         
     }
 
