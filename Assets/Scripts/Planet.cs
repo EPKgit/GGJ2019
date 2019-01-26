@@ -14,6 +14,7 @@ public class Planet : MonoBehaviour
 
     void Start()
     {
+        trades = new List<Card>();
         connections = new List<Planet>();
     }
 }
