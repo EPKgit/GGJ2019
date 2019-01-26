@@ -4,15 +4,25 @@ using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public static CameraController instance;
+
+    //public GameObject toFollow;
+    public Vector3 point;
+
+    public Vector3 offset = new Vector3(0, 0, -10f);
+    
     void Start()
     {
-        
+        if(instance != null)
+        {
+            Destroy(gameObject);
+        }    
+        instance = this;
+        DontDestroyOnLoad(gameObject);
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
+        transform.position = Vector3.Lerp(transform.position, point + offset, Time.deltaTime);
     }
 }

@@ -10,4 +10,10 @@ public class Planet : MonoBehaviour
     public Card[] trades;
     public bool canRefuel;
     public Text flavorText;
+    public List<Planet> connections;
+
+    void Start()
+    {
+        connections = new List<Planet>();
+    }
 }
