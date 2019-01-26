@@ -7,7 +7,7 @@ using UnityEditor;
 public class Planet : MonoBehaviour
 {
     public Sprite icon;
-    public Image background;
+    public Sprite background;
     [HideInInspector]public List<Card> trades = new List<Card>();
     [HideInInspector]public List<Planet> connections = new List<Planet>();
     public bool canRefuel;
