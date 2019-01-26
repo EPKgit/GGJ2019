@@ -9,19 +9,26 @@ public class GenerationScript : MonoBehaviour
     public GameObject lineRenderer;
     public LayerMask planetLayer;
     public float numberOfPlanetsToGen;
-    public float generationMax;
     public float generationMin;
+    public float generationMax;
     public float planetsTooClose;
     public float connectionRadius;
+    public float legMax;
 
     private List<GameObject> generatedObjects;
 
     IEnumerator Start()
     {
         yield return new WaitUntil( () => CameraController.instance != null);
-        GeneratePlanets();
+        generatedObjects = new List<GameObject>();
+        foreach (Transform child in gameObject.transform) 
+        {
+            generatedObjects.Add(child.gameObject);
+        }
         GenerateConnections();
         CenterCamera();
+        //RegenerateMap();
+        
     }
 
     void GeneratePlanets()
@@ -30,12 +37,20 @@ public class GenerationScript : MonoBehaviour
         Vector2 position;
         for(int x = 0; x < numberOfPlanetsToGen; ++x)
         {
-            generatedObjects.Add(Instantiate(planetPrefabs[0], Vector3.zero, Quaternion.identity, gameObject.transform));
+            GameObject planet = Instantiate(planetPrefabs[0], Vector3.zero, Quaternion.identity, gameObject.transform);
+            planet.name = "Planet " + x.ToString();
+            generatedObjects.Add(planet);
+            //Debug.Log("genning " + planet.name);
             do
             {
+                /*
                 position = (x == 0) ? Vector3.zero : generatedObjects[x - 1].transform.position;
-                position += Random.insideUnitCircle * Random.Range(generationMin, generationMax);
-            } while(TooClose(position));
+                float randX = Random.Range(-1, 1);
+                float randY = (1 - (randX * randX)) * ((Random.Range(0, 1) == 0) ? -1 : 1);
+                position += new Vector2(randX, randY) * Random.Range(generationMin, generationMax);
+                */
+                position = new Vector2(Random.Range(0, 50), Random.Range(0, 50));
+            } while(VerifyDistance(position, x));
             generatedObjects[x].transform.position = position;
         }
     }
@@ -50,6 +65,12 @@ public class GenerationScript : MonoBehaviour
                 {
                     if( (generatedObjects[x].transform.position - generatedObjects[y].transform.position).magnitude < connectionRadius)
                     {
+                        if(x < y)
+                        {
+                            //Debug.Log("adding "+ generatedObjects[x] + " and " + generatedObjects[y]);
+                            generatedObjects[x].GetComponent<Planet>().connections.Add(generatedObjects[y].GetComponent<Planet>());
+                            generatedObjects[y].GetComponent<Planet>().connections.Add(generatedObjects[x].GetComponent<Planet>());
+                        }
                         GameObject temp = Instantiate(lineRenderer, Vector3.zero, Quaternion.identity, gameObject.transform);
                         LineRenderer lr = temp.GetComponent<LineRenderer>();
                         Vector3[] pos = new[] { generatedObjects[x].transform.position, generatedObjects[y].transform.position };
@@ -75,39 +96,70 @@ public class GenerationScript : MonoBehaviour
                 }
             }
         }
-        Debug.Log(maxDist);
+        //Debug.Log(maxDist);
         CameraController.instance.point = midpoint;
-        CameraController.instance.offset = new Vector3(0f, 0f, maxDist / -1.5f);
+        CameraController.instance.offset = new Vector3(0f, 0f, maxDist * -1f);
     }
 
-    bool TooClose(Vector3 positionToCheck)
+    bool VerifyDistance(Vector3 positionToCheck, int index)
     {
+        float closestPlanet = float.MaxValue;
+        float distance;
         for(int x = 0; x < generatedObjects.Count; ++x)
         {
-            if((generatedObjects[x].transform.position - positionToCheck).magnitude < planetsTooClose)
+            distance = (generatedObjects[x].transform.position - positionToCheck).magnitude;
+            if(x != index)
             {
-                return true;
+                if( distance < planetsTooClose )
+                {
+                    Debug.Log("planets too close");
+                    return false;
+                }
+                if(distance < closestPlanet)
+                {
+                    closestPlanet = distance;
+                }
             }
         }
-        return false; 
+        //Debug.Log(closestPlanet > connectionRadius);
+        return closestPlanet > connectionRadius; 
     }
 
-    public void RegnerateMap()
+    bool TooManyLegs()
     {
-        foreach (Transform child in gameObject.transform) 
+        int twoCount = 0;
+        for(int x = 0; x < generatedObjects.Count; ++x)
         {
-            Destroy(child.gameObject);
+            if(generatedObjects[x].GetComponent<Planet>().connections.Count <= 2)
+            {
+                //Debug.Log(generatedObjects[x].name + " is a leg");
+                twoCount++;
+            }
         }
-        GeneratePlanets();
-        GenerateConnections();
-        CenterCamera();
+        //Debug.Log(twoCount);
+        //Debug.Log(twoCount >= legMax);
+        return twoCount >= legMax;
+    }
+
+    public void RegenerateMap()
+    {
+        do
+        {
+            foreach (Transform child in gameObject.transform) 
+            {
+                Destroy(child.gameObject);
+            }
+            GeneratePlanets();
+            GenerateConnections();
+            CenterCamera();
+        } while(TooManyLegs());
     }
 
     void Update()
     {
         if(Input.GetKeyDown(KeyCode.Space))
         {
-            RegnerateMap();
+            RegenerateMap();
         }
     }
 }
@@ -122,7 +174,7 @@ public class GenerationScriptEditor : Editor
 		DrawDefaultInspector();
         if(GUILayout.Button("Regen"))
         {
-            t.RegnerateMap();
+            t.RegenerateMap();
         }
 	}
 }

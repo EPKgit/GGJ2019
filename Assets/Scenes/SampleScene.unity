@@ -218,10 +218,11 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 512
   numberOfPlanetsToGen: 25
-  generationMax: 7
   generationMin: 5
-  planetsTooClose: 2
+  generationMax: 7
+  planetsTooClose: 3
   connectionRadius: 7
+  legMax: 3
 --- !u!4 &398655294
 Transform:
   m_ObjectHideFlags: 0

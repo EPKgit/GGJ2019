@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CommerceManager : MonoBehaviour
 {
@@ -8,14 +9,12 @@ public class CommerceManager : MonoBehaviour
     public Planet currentPlanet;
     public Canvas tradingInterface;
 
-    //Card 
-
     //Card Generation Formatting
-    public List<DraggableCard> playerCards;
-    public List<DraggableCard> planetCards;
+    //public List<DraggableCard> playerCards;
+    //public List<DraggableCard> planetCards;
     public float marginX;
-    public float bottomMarginY;
-    public float topMarginY;
+    public float marginY;
+
 
     public bool actionTaken;
     public bool dragging;
@@ -32,9 +31,17 @@ public class CommerceManager : MonoBehaviour
 
     void GenerateLayout()
     {
+        GenerateCardLayout();
+    }
+
+    void GenerateCardLayout()
+    {
         float canvasLeftBorder = tradingInterface.pixelRect.xMin + marginX;
         float canvasRightBorder = tradingInterface.pixelRect.xMax - marginX;
-        float canvasSpacing = (canvasRightBorder - canvasLeftBorder) / (player.playerHand.Count + 1);
+        float canvasBottomBorder = tradingInterface.pixelRect.yMin + marginY;
+        float canvasTopBorder = tradingInterface.pixelRect.yMax - marginY;
+        float handSpacingPlayer = (canvasRightBorder - canvasLeftBorder) / (player.playerHand.Count + 1);
+        float handSpacingPlanet = (canvasRightBorder - canvasLeftBorder) / (currentPlanet.trades.Count + 1);
         Debug.Log(player.playerHand.Count);
 
         //Generate interactble player hand.
@@ -42,13 +49,28 @@ public class CommerceManager : MonoBehaviour
         {
             GameObject blankCard = Instantiate(Resources.Load("TestDraggableCard")) as GameObject;
             blankCard.transform.SetParent(this.gameObject.transform, false);
-            blankCard.transform.position = new Vector2(canvasLeftBorder + canvasSpacing * (i + 1), tradingInterface.transform.position.y);
+            blankCard.transform.position = new Vector2(canvasLeftBorder + handSpacingPlayer * (i + 1), canvasBottomBorder);
             blankCard.GetComponent<DraggableCard>().card = player.playerHand[i];
             blankCard.GetComponent<DraggableCard>().LoadCard();
+            //playerCards.Add(blankCard.GetComponent<DraggableCard>());
         }
 
         //iterate through planet's cardlist
         //generate cards, leave space for refueling but you can ignore that for now i think
+        for (int i = 0; i < currentPlanet.trades.Count; ++i)
+        {
+            GameObject blankCard = Instantiate(Resources.Load("TestDraggableCard")) as GameObject;
+            blankCard.transform.SetParent(this.gameObject.transform, false);
+            blankCard.transform.position = new Vector2(canvasLeftBorder + handSpacingPlanet * (i + 1), canvasTopBorder);
+            blankCard.GetComponent<DraggableCard>().card = player.playerHand[i];
+            blankCard.GetComponent<DraggableCard>().LoadCard();
+            //planetCards.Add(blankCard.GetComponent<DraggableCard>());
+        }
+    }
+
+    void GenerateLandscape()
+    {
+        this.transform.GetChild(0).GetComponent<Image>().sprite = currentPlanet.background.sprite;
     }
 
     //Trading/Refueling
