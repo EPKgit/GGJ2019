@@ -4,28 +4,37 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-   public static GameManager instance;
+    public static GameManager instance;
 
-   void Start()
-   {
-       if(instance != null)
-       {
-           Destroy(gameObject);
-       }
-       instance = this;
-       DontDestroyOnLoad(gameObject);
-   }
+    public LayerMask planetLayer;
 
-   void Update()
-   {
-       if(Input.GetKeyDown(KeyCode.Mouse0))
-       {
-           Debug.Log("click");
-       }
-   }
+    private GameObject player;
+    private PlayerMovement playerMovement;
 
-   public void InputMove()
-   {
+    void Start()
+    {
+        if(instance != null)
+        {
+            Destroy(gameObject);
+        }
+        instance = this;
+        DontDestroyOnLoad(gameObject);
+        player = GameObject.FindGameObjectWithTag("Player");
+        playerMovement = player.GetComponent<PlayerMovement>();
+    }
 
-   }
+    void Update()
+    {
+    }
+
+    public void ClickInput(Planet p)
+    {
+        InputMove(p);
+    }
+
+    public void InputMove(Planet p)
+    {
+        playerMovement.currentPlanet = p;
+        CameraController.instance.point = p.transform.position;
+    }
 }
