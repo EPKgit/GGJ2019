@@ -7,13 +7,14 @@ public class Planet : MonoBehaviour
 {
     public Sprite icon;
     public Image background;
-    public Card[] trades;
+    public List<Card> trades;
     public bool canRefuel;
     public Text flavorText;
     public List<Planet> connections;
 
     void Start()
     {
+        trades = new List<Card>();
         connections = new List<Planet>();
     }
 }
