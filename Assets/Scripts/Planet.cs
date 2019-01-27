@@ -121,5 +121,13 @@ public class PlanetEditor : Editor
         }
         EditorGUI.indentLevel--;
         EditorGUILayout.LabelField("-----------");
+        EditorGUILayout.LabelField("Cards");
+        EditorGUI.indentLevel++;
+        foreach(Planet.PlanetTradeCard p in t.trades)
+        {
+            EditorGUILayout.LabelField(p.card.cardName);
+        }
+        EditorGUI.indentLevel--;
+        EditorGUILayout.LabelField("-----------");
 	}
 }

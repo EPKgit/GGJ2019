@@ -44,6 +44,9 @@ public class PlanetSideManager : MonoBehaviour
         {
             AudioManager.instance.SetMusic();
         }
+        GameManager.instance.SetPlanetOption(null);
+        GameManager.instance.UpdateHand();
+        GameManager.instance.StartMovePhase();
     }
     
     

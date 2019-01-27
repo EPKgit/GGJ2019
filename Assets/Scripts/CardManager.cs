@@ -20,6 +20,7 @@ public class CardManager : MonoBehaviour
     {
         cards = new List<GameObject>();
         distroQueues = new Dictionary<Card.Suit, List<Card>>();
+        distroKeys = new List<Card.Suit>();
         yield return new WaitUntil( () => GameManager.instance != null);
         yield return new WaitUntil( () => GameManager.instance.player != null);
         foreach(GameObject g in allCards)
@@ -30,19 +31,23 @@ public class CardManager : MonoBehaviour
             temp.GetComponent<HalfCard>().card = temp2.GetComponent<Card>();
             cards.Add(temp);
             Card.Suit suit = temp.GetComponent<HalfCard>().card.cardSuit;
-            if(distroQueues.ContainsKey(suit)){
-                distroQueues[suit] = new List<Card>();
-                distroKeys.Add(suit);
-            }
-            if(Random.Range(0,1)>0.5){
-                distroQueues[suit].Insert(0, temp.GetComponent<HalfCard>().card);
-            }else{
-                distroQueues[suit].Add(temp.GetComponent<HalfCard>().card);
-            }
             if(temp.GetComponent<HalfCard>().card.starterCard)
             {
                 GameManager.instance.player.playerHand.Add(temp2.GetComponent<Card>());
             }
+            else
+            {
+                if(!distroQueues.ContainsKey(suit)){
+                    distroQueues[suit] = new List<Card>();
+                    distroKeys.Add(suit);
+                }
+                if(Random.Range(0,1)>0.5){
+                    distroQueues[suit].Insert(0, temp.GetComponent<HalfCard>().card);
+                }else{
+                    distroQueues[suit].Add(temp.GetComponent<HalfCard>().card);
+                }
+            }
+            
         }
         foreach(GameObject go in GameManager.instance.planetList){
             Planet p = go.GetComponent<Planet>();
@@ -62,7 +67,8 @@ public class CardManager : MonoBehaviour
                 s = suitReq;
             }
             List<Card> q = distroQueues[s];
-            r[i] = q[q.Count-1];
+            Debug.Log(i+" "+  (q.Count-1));
+            r[j] = q[q.Count-1];
             q.RemoveAt(q.Count-1);
             //handle running out of cards
             if(q.Count <= 0){

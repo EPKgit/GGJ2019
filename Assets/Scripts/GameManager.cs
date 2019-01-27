@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
 
     public LayerMask planetLayer;
     public GameObject[] hand;
+    public GameObject[] planetHand;
 
     public PlayerMovement playerMovement;
     public Player player;
@@ -50,7 +51,6 @@ public class GameManager : MonoBehaviour
 
     public void InputMove(Planet p)
     {
-        chosenPlanet = null;
         if(PlanetSideManager.instance != null)
         {
             PlanetSideManager.instance.comeFromMapScreen(p);
@@ -61,6 +61,10 @@ public class GameManager : MonoBehaviour
         }
         PlayerMovement.instance.currentPlanet = p;
         CameraController.instance.point = p.transform.position;
+        UpdatePlanetHand();
+        chosenPlanet = null;
+
+
         //p.HideGlow();
     }
 
@@ -113,7 +117,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    void UpdateHand()
+    public void UpdateHand()
     {
         //Debug.Log("Update");
         int index = 0;
@@ -139,6 +143,36 @@ public class GameManager : MonoBehaviour
         currentHandSize = player.playerHand.Count;
     }
 
+    void UpdatePlanetHand()
+    {
+        Debug.Log(1);
+        if(chosenPlanet == null)
+        {
+            return;
+        }
+        Debug.Log(2);
+        int index = 0;
+        foreach(GameObject slot in planetHand)
+        {
+            foreach(Transform child in slot.transform)
+            {
+                child.transform.parent = null;
+                child.position = Vector3.one * 9999;
+            }
+            if(chosenPlanet.trades.Count > index)
+            {
+                //Debug.Log(index);
+                chosenPlanet.trades[index].card.halfCard.transform.SetParent(slot.transform);
+                RectTransform rect =  chosenPlanet.trades[index].card.halfCard.GetComponent<RectTransform>();
+                rect.anchoredPosition = Vector2.zero;
+                rect.anchoredPosition3D = Vector3.zero;
+                rect.offsetMax = Vector2.zero;
+                rect.offsetMin = Vector2.zero;
+            }
+            index++;
+        }
+    }
+
     void SetAllSlotsOff()
     {
         for(int x = 0; x < hand.Length; ++x)
@@ -155,7 +189,12 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    IEnumerator WaitForMoveInput()
+    public void StartMovePhase()
+    {
+        StartCoroutine(WaitForMoveInput());
+    }
+
+    public IEnumerator WaitForMoveInput()
     {
         yield return new WaitUntil( () => player.playerHand !=  null);
         yield return new WaitUntil( () => player.playerHand.Count != 0);
@@ -164,7 +203,7 @@ public class GameManager : MonoBehaviour
         pickedMoveOption = false;
         ResetListeners();
         SetAllSlotsOff();
-        Debug.Log(chosenCard);
+        //Debug.Log(chosenCard);
         HashSet<Planet> planetsAvail = (chosenCard as MovementCard).GetHopTargets(playerMovement.currentPlanet, 0);
         foreach(Planet p in planetsAvail)
         {
@@ -175,10 +214,19 @@ public class GameManager : MonoBehaviour
             chosenPlanet = null;
             while(chosenPlanet == null)
             {
-                Debug.Log("busy wait");
                 yield return null;
             }
         }
+        foreach(Planet p in planetsAvail)
+        {
+            p.HideGlow();
+        }
         InputMove(chosenPlanet);
+
+    }
+
+    IEnumerator WaitForTradeInput()
+    {
+        yield return null;
     }
 }
