@@ -16,8 +16,12 @@ namespace GraphGeneration{
 
         //*  main for testing
         public static void Main(){
-            Graph graph = Build(400, 400, 20.0f, 20.0f, 2.0f, 2.0f, 0.6f);
-            Console.WriteLine("Nodes: {0}, Edges: {1}", graph.Nodes.Count, graph.Edges.Count);
+            Graph graph = Build(800, 4000, 20.0f, 20.0f, 2.0f, 2.0f, 1.0f);
+            HashSet<BuildingCC> ccs = new HashSet<BuildingCC>();
+            foreach(BuildingNode n in graph.Nodes){
+                ccs.Add(n.cc);
+            }
+            Console.WriteLine("Nodes: {0}, Edges: {1}, Connected Components: {2}", graph.Nodes.Count, graph.Edges.Count, ccs.Count);
         }
         //*/
 
@@ -50,7 +54,30 @@ namespace GraphGeneration{
                     }
                 }
             }
-            return new Graph{Nodes = grid.Nodes, Edges = edges};
+            Graph r = new Graph{Nodes = grid.Nodes, Edges = edges};
+            ConnectGraph(r, x);
+            return r;
+        }
+
+
+        internal static void ConnectGraph(Graph graph, int x){
+            Dictionary<BuildingCC, BuildingCC> changedIslands = new Dictionary<BuildingCC, BuildingCC>();
+            for(int i = 1; i < graph.Nodes.Count; i++){
+                if(changedIslands.ContainsKey(graph.Nodes[i].cc)){ //if the islands has already been changed, update it
+                    graph.Nodes[i].cc = changedIslands[graph.Nodes[i].cc];
+                }
+                if(i % x != 0){
+                    if(graph.Nodes[i].cc != graph.Nodes[i-1].cc){ //if we are in an island on one axis, connect it
+                        changedIslands[graph.Nodes[i].cc] = graph.Nodes[i-1].cc;
+                        graph.Nodes[i].cc = graph.Nodes[i-1].cc; 
+                    }
+                }else{
+                    if(graph.Nodes[i].cc != graph.Nodes[i-x].cc){ //if we are in an island on one axis, connect it
+                        changedIslands[graph.Nodes[i].cc] = graph.Nodes[i-x].cc;
+                        graph.Nodes[i].cc = graph.Nodes[i-x].cc; 
+                    }
+                }
+            }
         }
 
         internal static Graph BuildGrid(int x, int y, float xStep, float yStep, float xRandRange, float yRandRange){
