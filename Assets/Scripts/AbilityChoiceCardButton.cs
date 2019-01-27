@@ -24,5 +24,7 @@ public class AbilityChoiceCardButton : MonoBehaviour
     public void TradeCardActivated()
     {
         Debug.Log("5: Trade Ability Card chosen.");
+        commerceManager.SetAbilityChosen(true);
+        commerceManager.SetChosenTradeCard(card);
     }
 }
