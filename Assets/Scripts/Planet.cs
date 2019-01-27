@@ -52,10 +52,12 @@ public class Planet : MonoBehaviour
         //Debug.Log("enter");
         shouldDisplay = true;
         popupUI.gameObject.SetActive(true);
+        /*
         if(PlayerMovement.instance.currentPlanet.connections.Contains(this))
         {
             hoverSprite.SetActive(true);
         }
+        */
     }
 
     void OnMouseExit()
@@ -66,6 +68,11 @@ public class Planet : MonoBehaviour
         hoverSprite.SetActive(false);
     }
 
+    public void StartGlow()
+    {
+        hoverSprite.SetActive(true);
+    }
+
     public void HideGlow()
     {
         hoverSprite.SetActive(false);
@@ -73,7 +80,7 @@ public class Planet : MonoBehaviour
     
     void OnMouseDown()
     {
-        GameManager.instance.ClickInput(this);
+        GameManager.instance.SetPlanetOption(this);
     }
 
     // reveals up to i cards (pass 6 to reveal all)

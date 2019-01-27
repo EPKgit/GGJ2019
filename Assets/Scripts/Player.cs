@@ -11,8 +11,16 @@ public class Player : MonoBehaviour
     public int fuel;
     public int fuelCap;
 
+    private PlayerMovement pm;
+
     void Start()
     {
+        pm = GetComponent<PlayerMovement>();
+    }
+
+    void Update()
+    {
+        currentPlanet = pm.currentPlanet;
     }
 
     public void CleanUpHand()

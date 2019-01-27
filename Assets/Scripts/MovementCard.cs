@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using UnityEngine;
 
 public class MovementCard : Card {
 
@@ -17,6 +18,7 @@ public class MovementCard : Card {
         HashSet<Planet> found = new HashSet<Planet>();
         HashSet<Planet> unexplored = new HashSet<Planet>();
         int hopsLeft = hops + hopMod;
+        Debug.Log(from);
         unexplored.Add(from);
         while(hopsLeft > 0 && unexplored.Count > 0){
             HashSet<Planet> newUnexplored = new HashSet<Planet>();
@@ -29,9 +31,9 @@ public class MovementCard : Card {
                         found.Add(q);
                     }
                 }
-                unexplored = newUnexplored;
-                hopsLeft--;
             }
+            unexplored = newUnexplored;
+            hopsLeft--;
         }
         return found;
 
