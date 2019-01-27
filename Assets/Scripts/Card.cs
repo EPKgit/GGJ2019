@@ -10,6 +10,13 @@ public class Card : MonoBehaviour
     public Sprite cardImage;
     public string cardFlavorText;
     public string cardAbilityText;
+
+    //For trading costs and transactions.
+    public int fuelCost;
+    public int cardCost;
+    public int fuelReward;
+    public int cardReward;
+
     //public bool ownedByPlayer;
     //Ability cardAbility;
     //each UI card should have a Card datatype of the card itself
