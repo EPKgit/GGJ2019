@@ -1,5 +1,20 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &3569815721209707791
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4725642845691520200}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c97609ba2b33d46b5ac3faea41cf27af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefabCard: {fileID: 8516016085843292146, guid: 6a60e8307aea6d1418542b3f6515940f,
+    type: 3}
+  card: {fileID: 0}
 --- !u!1001 &8422836062867806153
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10,7 +25,7 @@ PrefabInstance:
     - target: {fileID: 3852609461186917121, guid: 10b30dde1f61b52409b5a222b34194fe,
         type: 3}
       propertyPath: m_Name
-      value: InGameHalfCard
+      value: EngravedPenHalf Variant
       objectReference: {fileID: 0}
     - target: {fileID: 3852609461186917127, guid: 10b30dde1f61b52409b5a222b34194fe,
         type: 3}
@@ -129,5 +144,12 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8516016085843292146, guid: 6a60e8307aea6d1418542b3f6515940f,
         type: 3}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3852609461186917126, guid: 10b30dde1f61b52409b5a222b34194fe, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 10b30dde1f61b52409b5a222b34194fe, type: 3}
+--- !u!1 &4725642845691520200 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3852609461186917121, guid: 10b30dde1f61b52409b5a222b34194fe,
+    type: 3}
+  m_PrefabInstance: {fileID: 8422836062867806153}
+  m_PrefabAsset: {fileID: 0}

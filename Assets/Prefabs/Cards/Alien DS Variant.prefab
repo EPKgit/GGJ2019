@@ -1,5 +1,33 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &3624672669851727124
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6349151698354090724}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c54a673a6fff6b4084ff50b4d99f697, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cardName: Alien DS
+  cardType: 3
+  cardSuit: 5
+  cardImage: {fileID: 21300000, guid: 870636bf2e1ef09478fa96aecd4999c6, type: 3}
+  cardFlavorText: You get Clues about the ideal Items on Item cards.
+  cardAbilityText: Triggers whenever you Trade for a Valuable Item. Gain 2 Fuel
+  fuelCost: 0
+  fuelReward: 0
+  hopsReward: 0
+  extraRefuelReward: 0
+  CouldRefuelVersion: {fileID: 0}
+  mayRefuelAfter: 1
+  mayTradeAfter: 1
+  passiveEffect: 4
+  halfCard: {fileID: 0}
+  starterCard: 1
 --- !u!1001 &1820328587911651857
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11,6 +39,42 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Alien DS Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 1582937189982655951, guid: c994436c8689089429975f9bbc1618c7,
+        type: 3}
+      propertyPath: cardName
+      value: Alien DS
+      objectReference: {fileID: 0}
+    - target: {fileID: 1582937189982655951, guid: c994436c8689089429975f9bbc1618c7,
+        type: 3}
+      propertyPath: cardSuit
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1582937189982655951, guid: c994436c8689089429975f9bbc1618c7,
+        type: 3}
+      propertyPath: cardImage
+      value: 
+      objectReference: {fileID: 21300000, guid: 870636bf2e1ef09478fa96aecd4999c6,
+        type: 3}
+    - target: {fileID: 1582937189982655951, guid: c994436c8689089429975f9bbc1618c7,
+        type: 3}
+      propertyPath: cardFlavorText
+      value: You get Clues about the ideal Items on Item cards.
+      objectReference: {fileID: 0}
+    - target: {fileID: 1582937189982655951, guid: c994436c8689089429975f9bbc1618c7,
+        type: 3}
+      propertyPath: cardAbilityText
+      value: Triggers whenever you Trade for a Valuable Item. Gain 2 Fuel.
+      objectReference: {fileID: 0}
+    - target: {fileID: 1582937189982655951, guid: c994436c8689089429975f9bbc1618c7,
+        type: 3}
+      propertyPath: cardType
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1582937189982655951, guid: c994436c8689089429975f9bbc1618c7,
+        type: 3}
+      propertyPath: starterCard
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4002707066554890638, guid: c994436c8689089429975f9bbc1618c7,
         type: 3}
@@ -67,31 +131,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1582937189982655951, guid: c994436c8689089429975f9bbc1618c7,
-        type: 3}
-      propertyPath: cardName
-      value: Alien DS
-      objectReference: {fileID: 0}
-    - target: {fileID: 1582937189982655951, guid: c994436c8689089429975f9bbc1618c7,
-        type: 3}
-      propertyPath: cardSuit
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 1582937189982655951, guid: c994436c8689089429975f9bbc1618c7,
-        type: 3}
-      propertyPath: cardImage
-      value: 
-      objectReference: {fileID: 21300000, guid: 870636bf2e1ef09478fa96aecd4999c6,
-        type: 3}
-    - target: {fileID: 1582937189982655951, guid: c994436c8689089429975f9bbc1618c7,
-        type: 3}
-      propertyPath: cardFlavorText
-      value: You get Clues about the ideal Items on Item cards.
-      objectReference: {fileID: 0}
-    - target: {fileID: 1582937189982655951, guid: c994436c8689089429975f9bbc1618c7,
-        type: 3}
-      propertyPath: cardAbilityText
-      value: Triggers whenever you Trade for a Valuable Item. Gain 2 Fuel.
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1582937189982655951, guid: c994436c8689089429975f9bbc1618c7, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: c994436c8689089429975f9bbc1618c7, type: 3}
+--- !u!1 &6349151698354090724 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4710673814894203125, guid: c994436c8689089429975f9bbc1618c7,
+    type: 3}
+  m_PrefabInstance: {fileID: 1820328587911651857}
+  m_PrefabAsset: {fileID: 0}

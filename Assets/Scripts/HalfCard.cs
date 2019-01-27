@@ -6,7 +6,7 @@ using UnityEngine.EventSystems;
 
 public class HalfCard : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
-    //public GameObject prefabCard;
+    public GameObject prefabCard;
     public Card card;
 
     private float offset = 5f;
@@ -14,7 +14,7 @@ public class HalfCard : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     void Start()
     {
         //card = prefabCard.GetComponent<Card>();
-        Debug.Log(card.cardName);
+        transform.GetChild(1).GetComponent<Image>().sprite = prefabCard.GetComponent<Card>().cardImage;
     }
 
     public void OnPointerEnter(PointerEventData pointerEventData)

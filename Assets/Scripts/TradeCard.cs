@@ -5,12 +5,10 @@ public class TradeCard : Card {
 
     public CardPred[] cardReward;
 
-    public override Type cardType{
-        get{ return Type.TRADE; }
-    }
-
     protected virtual void Start(){
         base.Start();
+        cardType = Type.TRADE;
+        cardReward = new CardPred[0];
     }
 
     public new virtual bool Usable(int fuel, List<Card> hand){

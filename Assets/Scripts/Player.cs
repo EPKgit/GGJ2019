@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    public Card[] startingHand;
-    public List<Card> playerHand;
+    public List<GameObject> playerCards = new List<GameObject>();
+    public List<Card> playerHand = new List<Card>();
     public Planet currentPlanet;    //This is useless but I have no idea if someone else is using it.
     public int maxHandSize;
     public int fuel;
@@ -13,7 +13,6 @@ public class Player : MonoBehaviour
 
     void Start()
     {
-        playerHand = new List<Card>(startingHand);
     }
 
     public void CleanUpHand()

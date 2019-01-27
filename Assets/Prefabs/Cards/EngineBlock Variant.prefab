@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cardName: Engine Block
+  cardType: 0
   cardSuit: 1
   cardImage: {fileID: 21300000, guid: 7ece1aa4e55234595a04067173f38599, type: 3}
   cardFlavorText: Fuel is scarce and vital to travel - learn to manage it wisely.
@@ -24,8 +25,9 @@ MonoBehaviour:
   CouldRefuelVersion: {fileID: 0}
   mayRefuelAfter: 1
   mayTradeAfter: 1
+  passiveEffect: 0
   halfCard: {fileID: 0}
-  starterCard: 0
+  starterCard: 1
   DoesTp: 0
   DoesHop: 1
   hops: 0
@@ -42,6 +44,32 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: EngineBlock Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 1582937189982655951, guid: c994436c8689089429975f9bbc1618c7,
+        type: 3}
+      propertyPath: cardName
+      value: Engine Block
+      objectReference: {fileID: 0}
+    - target: {fileID: 1582937189982655951, guid: c994436c8689089429975f9bbc1618c7,
+        type: 3}
+      propertyPath: cardImage
+      value: 
+      objectReference: {fileID: 21300000, guid: 7ece1aa4e55234595a04067173f38599,
+        type: 3}
+    - target: {fileID: 1582937189982655951, guid: c994436c8689089429975f9bbc1618c7,
+        type: 3}
+      propertyPath: cardFlavorText
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1582937189982655951, guid: c994436c8689089429975f9bbc1618c7,
+        type: 3}
+      propertyPath: cardAbilityText
+      value: 1 Fuel. Move 1 Hop
+      objectReference: {fileID: 0}
+    - target: {fileID: 1582937189982655951, guid: c994436c8689089429975f9bbc1618c7,
+        type: 3}
+      propertyPath: fuelCost
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4002707066554890638, guid: c994436c8689089429975f9bbc1618c7,
         type: 3}
@@ -97,32 +125,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1582937189982655951, guid: c994436c8689089429975f9bbc1618c7,
-        type: 3}
-      propertyPath: cardName
-      value: Engine Block
-      objectReference: {fileID: 0}
-    - target: {fileID: 1582937189982655951, guid: c994436c8689089429975f9bbc1618c7,
-        type: 3}
-      propertyPath: cardImage
-      value: 
-      objectReference: {fileID: 21300000, guid: 7ece1aa4e55234595a04067173f38599,
-        type: 3}
-    - target: {fileID: 1582937189982655951, guid: c994436c8689089429975f9bbc1618c7,
-        type: 3}
-      propertyPath: cardFlavorText
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 1582937189982655951, guid: c994436c8689089429975f9bbc1618c7,
-        type: 3}
-      propertyPath: cardAbilityText
-      value: 1 Fuel. Move 1 Hop
-      objectReference: {fileID: 0}
-    - target: {fileID: 1582937189982655951, guid: c994436c8689089429975f9bbc1618c7,
-        type: 3}
-      propertyPath: fuelCost
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 1582937189982655951, guid: c994436c8689089429975f9bbc1618c7, type: 3}

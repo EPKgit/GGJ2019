@@ -16,9 +16,7 @@ public class Card : MonoBehaviour
     public static CardPred[] OneValuable = new CardPred[]{new SuitCardPred{Suit=Suit.VALUABLE}};
 
     public string cardName;
-    public virtual Type cardType{
-        get { return Type.NONE; }
-    }
+    public Type cardType;
     public Suit cardSuit;
     public Sprite cardImage;
     public string cardFlavorText;
@@ -45,10 +43,12 @@ public class Card : MonoBehaviour
     protected virtual void Start()
     {
         CouldRefuelVersion = this;    
+        cardCost = new CardPred[0];
     }
 
     public bool Usable(int fuel, List<Card> hand)
     {
+        Debug.Log("usable");
         //Check if we go over fuel cost.
         if (this.fuelCost > fuel)
         {

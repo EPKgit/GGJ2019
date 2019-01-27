@@ -103,6 +103,7 @@ public class GenerationScript : MonoBehaviour
                 }
             }
         }
+        GameManager.instance.setPlanets(generatedObjects);
     }
     
     
