@@ -20,6 +20,7 @@ public class SettleButtonControl : MonoBehaviour
 
     public void ConfirmationPressed()
     {
+        Debug.Log("Settle confirmed. Going to EndScreen");
         SceneManager.LoadScene("EndScreen");
     }
 
