@@ -1,0 +1,92 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &976603490492464326
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4377033117320320079, guid: c38b9e327f51f49deba0bf5f6852ed57,
+        type: 3}
+      propertyPath: m_Name
+      value: Ship Stereo
+      objectReference: {fileID: 0}
+    - target: {fileID: 5363097019572059444, guid: c38b9e327f51f49deba0bf5f6852ed57,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5363097019572059444, guid: c38b9e327f51f49deba0bf5f6852ed57,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5363097019572059444, guid: c38b9e327f51f49deba0bf5f6852ed57,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5363097019572059444, guid: c38b9e327f51f49deba0bf5f6852ed57,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5363097019572059444, guid: c38b9e327f51f49deba0bf5f6852ed57,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5363097019572059444, guid: c38b9e327f51f49deba0bf5f6852ed57,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5363097019572059444, guid: c38b9e327f51f49deba0bf5f6852ed57,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5363097019572059444, guid: c38b9e327f51f49deba0bf5f6852ed57,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5363097019572059444, guid: c38b9e327f51f49deba0bf5f6852ed57,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5363097019572059444, guid: c38b9e327f51f49deba0bf5f6852ed57,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5363097019572059444, guid: c38b9e327f51f49deba0bf5f6852ed57,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8718580031795175137, guid: c38b9e327f51f49deba0bf5f6852ed57,
+        type: 3}
+      propertyPath: cardName
+      value: Ship Stereo
+      objectReference: {fileID: 0}
+    - target: {fileID: 8718580031795175137, guid: c38b9e327f51f49deba0bf5f6852ed57,
+        type: 3}
+      propertyPath: cardImage
+      value: 
+      objectReference: {fileID: 21300000, guid: d26801acf51f94aaf9335f1629b7b28e,
+        type: 3}
+    - target: {fileID: 8718580031795175137, guid: c38b9e327f51f49deba0bf5f6852ed57,
+        type: 3}
+      propertyPath: cardFlavorText
+      value: No one wants more than three Trades.
+      objectReference: {fileID: 0}
+    - target: {fileID: 8718580031795175137, guid: c38b9e327f51f49deba0bf5f6852ed57,
+        type: 3}
+      propertyPath: cardAbilityText
+      value: 'Any 1 card. Gain 1 Movement Item and 2 Fuel. '
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: c38b9e327f51f49deba0bf5f6852ed57, type: 3}
