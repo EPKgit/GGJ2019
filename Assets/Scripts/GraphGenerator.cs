@@ -16,7 +16,7 @@ namespace GraphGeneration{
 
         //*  main for testing
         public static void Main(){
-            Graph graph = Build(800, 4000, 20.0f, 20.0f, 2.0f, 2.0f, 1.0f);
+            Graph graph = Build(5, 3, 3.0f, 3.0f, 2.0f, 2.0f, 0.0f);
             HashSet<BuildingCC> ccs = new HashSet<BuildingCC>();
             foreach(BuildingNode n in graph.Nodes){
                 ccs.Add(n.cc);
@@ -70,11 +70,23 @@ namespace GraphGeneration{
                     if(graph.Nodes[i].cc != graph.Nodes[i-1].cc){ //if we are in an island on one axis, connect it
                         changedIslands[graph.Nodes[i].cc] = graph.Nodes[i-1].cc;
                         graph.Nodes[i].cc = graph.Nodes[i-1].cc; 
+                        //add the edge
+                        BuildingEdge e = new BuildingEdge(graph.Nodes[i-1],graph.Nodes[i-1]);
+                        graph.Edges.Add(e);
+                        //build adjacencies
+                        e.Nodes[0].AdjacentNodes.Add(e.Nodes[1]);
+                        e.Nodes[1].AdjacentNodes.Add(e.Nodes[0]);
                     }
                 }else{
                     if(graph.Nodes[i].cc != graph.Nodes[i-x].cc){ //if we are in an island on one axis, connect it
                         changedIslands[graph.Nodes[i].cc] = graph.Nodes[i-x].cc;
                         graph.Nodes[i].cc = graph.Nodes[i-x].cc; 
+                        //add the edge
+                        BuildingEdge e = new BuildingEdge(graph.Nodes[i-1],graph.Nodes[i-1]);
+                        graph.Edges.Add(e);
+                        //build adjacencies
+                        e.Nodes[0].AdjacentNodes.Add(e.Nodes[1]);
+                        e.Nodes[1].AdjacentNodes.Add(e.Nodes[0]);
                     }
                 }
             }
