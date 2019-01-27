@@ -28,7 +28,7 @@ public class MovementCard : Card {
                     if(!found.Contains(q) && canMoveThrough(q)){
                         newUnexplored.Add(q);
                     }
-                    if(canMoveTo(q)){
+                    if(!q.isStart && canMoveTo(q)){
                         found.Add(q);
                     }
                 }

@@ -1,4 +1,4 @@
-public class FanctyPainting : TradeCard{
+public class PaintingCard : TradeCard{
 
     protected override void Start(){
         this.cardCost = AnyOne;
