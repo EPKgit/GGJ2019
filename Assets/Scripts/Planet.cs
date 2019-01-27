@@ -39,7 +39,7 @@ public class Planet : MonoBehaviour
 
     void OnMouseEnter()
     {
-        Debug.Log("enter");
+        //Debug.Log("enter");
         shouldDisplay = true;
         popupUI.gameObject.SetActive(true);
         if(PlayerMovement.instance.currentPlanet.connections.Contains(this))
@@ -50,7 +50,7 @@ public class Planet : MonoBehaviour
 
     void OnMouseExit()
     {
-        Debug.Log("exit");
+        //Debug.Log("exit");
         shouldDisplay = false;
         popupUI.gameObject.SetActive(false);
         hoverSprite.SetActive(false);

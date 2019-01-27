@@ -10,7 +10,7 @@ PrefabInstance:
     - target: {fileID: 263233540749961018, guid: 1c25f1657425d704a84fee3c9594fda1,
         type: 3}
       propertyPath: m_Name
-      value: CyberpunkPlanet
+      value: CyberpunkPlanet Variant
       objectReference: {fileID: 0}
     - target: {fileID: 4909677570673939339, guid: 1c25f1657425d704a84fee3c9594fda1,
         type: 3}
@@ -72,6 +72,12 @@ PrefabInstance:
       propertyPath: icon
       value: 
       objectReference: {fileID: 21300000, guid: 585d61ae12c82674093b18fb3cb49b90,
+        type: 3}
+    - target: {fileID: 3301800816500797430, guid: 1c25f1657425d704a84fee3c9594fda1,
+        type: 3}
+      propertyPath: background
+      value: 
+      objectReference: {fileID: 21300000, guid: 03f57c518bc98044aa106aae805241b7,
         type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1c25f1657425d704a84fee3c9594fda1, type: 3}

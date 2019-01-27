@@ -10,7 +10,7 @@ PrefabInstance:
     - target: {fileID: 263233540749961018, guid: 1c25f1657425d704a84fee3c9594fda1,
         type: 3}
       propertyPath: m_Name
-      value: WildWestPlanet
+      value: WildWestPlanet Variant
       objectReference: {fileID: 0}
     - target: {fileID: 4909677570673939339, guid: 1c25f1657425d704a84fee3c9594fda1,
         type: 3}
@@ -78,5 +78,11 @@ PrefabInstance:
       propertyPath: spinSpeed
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 3301800816500797430, guid: 1c25f1657425d704a84fee3c9594fda1,
+        type: 3}
+      propertyPath: background
+      value: 
+      objectReference: {fileID: 21300000, guid: 073dd7bc0252dd04a8787f62a96677f0,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1c25f1657425d704a84fee3c9594fda1, type: 3}
