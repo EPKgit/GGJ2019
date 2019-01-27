@@ -95,5 +95,10 @@ PrefabInstance:
         intentions. Most regions of the planet are chilly year-round, with light snow
         during one quarter of the year. '
       objectReference: {fileID: 0}
+    - target: {fileID: 3301800816500797430, guid: 1c25f1657425d704a84fee3c9594fda1,
+        type: 3}
+      propertyPath: Suit
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1c25f1657425d704a84fee3c9594fda1, type: 3}

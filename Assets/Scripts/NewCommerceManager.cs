@@ -228,7 +228,8 @@ public class NewCommerceManager : MonoBehaviour
     // TO BE CALLED BY THE REFUEL BUTTON
     public void Refule(){
         if(planet.canRefuel){
-            player.fuel += refuelValue;
+            player.fuel += refuelValue + player.extaRefuel;
+            player.extaRefuel = 0;
             planet.canRefuel = false;
             Debug.Log("Refueling.");
             EndCommercePhase();

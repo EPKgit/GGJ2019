@@ -204,24 +204,54 @@ public class GameManager : MonoBehaviour
         ResetListeners();
         SetAllSlotsOff();
         //Debug.Log(chosenCard);
-        HashSet<Planet> planetsAvail = (chosenCard as MovementCard).GetHopTargets(playerMovement.currentPlanet, 0);
-        foreach(Planet p in planetsAvail)
+        MovementCard move = chosenCard as MovementCard;
+        HashSet<Planet> planetsAvail = new HashSet<Planet>();
+        if(move.DoesTp)
         {
-            p.StartGlow();
-        }
-        while(!planetsAvail.Contains(chosenPlanet))
-        {
-            chosenPlanet = null;
-            while(chosenPlanet == null)
+            foreach(GameObject p in planetList)
             {
-                yield return null;
+                if(move.CanTpTo(player.currentPlanet, p.GetComponent<Planet>()))
+                {
+                    p.GetComponent<Planet>().StartGlow();
+                    planetsAvail.Add(p.GetComponent<Planet>());
+                }
             }
+            while(!planetsAvail.Contains(chosenPlanet))
+            {
+                chosenPlanet = null;
+                while(chosenPlanet == null)
+                {
+                    yield return null;
+                }
+            }
+            foreach(Planet p in planetsAvail)
+            {
+                p.HideGlow();
+            }
+            InputMove(chosenPlanet);
         }
-        foreach(Planet p in planetsAvail)
+        if(move.DoesHop)
         {
-            p.HideGlow();
+            planetsAvail = (chosenCard as MovementCard).GetHopTargets(playerMovement.currentPlanet, player.extraHops);
+            player.extraHops = 0;
+            foreach(Planet p in planetsAvail)
+            {
+                p.StartGlow();
+            }
+            while(!planetsAvail.Contains(chosenPlanet))
+            {
+                chosenPlanet = null;
+                while(chosenPlanet == null)
+                {
+                    yield return null;
+                }
+            }
+            foreach(Planet p in planetsAvail)
+            {
+                p.HideGlow();
+            }
+            InputMove(chosenPlanet);
         }
-        InputMove(chosenPlanet);
 
     }
 
