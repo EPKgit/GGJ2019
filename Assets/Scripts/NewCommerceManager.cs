@@ -11,7 +11,7 @@ public class NewCommerceManager : MonoBehaviour
     //For ability choosing phase.
     public GameObject AbilityChoiceMenu;
     [HideInInspector] public bool abilityChosen;
-    [HideInInspector] public Card chosenTradeCard;
+    [HideInInspector] public TradeCard chosenTradeCard;
 
     //For ability chosen set-up phase.
     [HideInInspector] public int cardsLosing;
@@ -103,7 +103,7 @@ public class NewCommerceManager : MonoBehaviour
 
     public void SetChosenTradeCard(Card card)
     {
-        chosenTradeCard = card;
+        chosenTradeCard = card as TradeCard;
     }
 
     public void SetAbilityChosen(bool active)
@@ -122,7 +122,7 @@ public class NewCommerceManager : MonoBehaviour
         List<Card> UsableAbilityCards = new List<Card>();
         for (int i = 0; i < player.playerHand.Count; ++i)
         {
-            if (player.playerHand[i].cardType == "Trade")
+            if (player.playerHand[i].cardType == Card.Type.TRADE)
             {
                 //Check if trade card is usable for player.
                 if (player.playerHand[i].Usable(player.fuel, player.playerHand))
@@ -158,8 +158,8 @@ public class NewCommerceManager : MonoBehaviour
     public void TradeAbilityChosenPhase()
     {
         Debug.Log("7: Starting trade setup.");
-        cardsLosing = chosenTradeCard.cardCost;
-        cardsGaining = chosenTradeCard.cardReward;
+        cardsLosing = chosenTradeCard.cardCost.Length;
+        cardsGaining = chosenTradeCard.cardReward.Length;
 
         //Close ability choice menu.
         Debug.Log("8: Closing Ability Choice Menu.");
