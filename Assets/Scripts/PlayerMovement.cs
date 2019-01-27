@@ -20,6 +20,7 @@ public class PlayerMovement : MonoBehaviour
         {
            yield return null;
         }
+        enabled = true;
         if(instance != null)
         {
             Destroy(gameObject);
