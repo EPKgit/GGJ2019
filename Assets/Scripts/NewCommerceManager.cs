@@ -22,6 +22,9 @@ public class NewCommerceManager : MonoBehaviour
     //For trading menu set-up phase.
     private bool tradeMenuReady;
     public GameObject TradingMenu;
+    public Image landscape;
+    public GameObject playerTradeHand;
+    public GameObject planetTradeHand;
 
     void Start()
     {
@@ -67,7 +70,35 @@ public class NewCommerceManager : MonoBehaviour
 
     public void SetUpTradeMenu()
     {
+        Debug.Log("10: Setting up landscape.");
+        landscape.sprite = planet.background;
         TradingMenu.SetActive(true);
+
+
+        //Preparing player trade hand.
+        Debug.Log("11: Player trade hand setup.");
+        for (int i = 0; i < player.playerHand.Count; ++i)
+        {
+            GameObject playerCard = Instantiate(Resources.Load("TradingCard")) as GameObject;
+            playerCard.transform.SetParent(playerTradeHand.transform, false);
+            playerCard.GetComponent<TradingPhaseCard>().owner = "Player";
+            playerCard.GetComponent<TradingPhaseCard>().card = player.playerHand[i];
+        }
+
+        //Preparing planet trade hand.
+        Debug.Log("12: Planet trade hand setup.");
+        for (int i = 0; i < planet.trades.Count; ++i)
+        {
+            GameObject planetCard = Instantiate(Resources.Load("TradingCard")) as GameObject;
+            planetCard.transform.SetParent(planetTradeHand.transform, false);
+            planetCard.GetComponent<TradingPhaseCard>().owner = "Planet";
+            planetCard.GetComponent<TradingPhaseCard>().card = planet.trades[i];
+        }
+
+
+        Debug.Log("13: Trade Menu setup is complete.");
+        tradeMenuReady = true;
+        
     }
 
     public void SetChosenTradeCard(Card card)
