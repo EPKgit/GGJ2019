@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
 
     private GameObject player;
     private PlayerMovement playerMovement;
+    private List<GameObject> planetList;
 
     void Start()
     {
@@ -36,5 +37,12 @@ public class GameManager : MonoBehaviour
     {
         playerMovement.currentPlanet = p;
         CameraController.instance.point = p.transform.position;
+        p.HideGlow();
+    }
+
+    public void setPlanets(List<GameObject> planets)
+    {
+        planetList = planets;
+        InputMove(planets[0].GetComponent<Planet>());
     }
 }
