@@ -10,7 +10,7 @@ PrefabInstance:
     - target: {fileID: 396765175638208832, guid: 81db9be4d3f364fdc80ad522a2d4111a,
         type: 3}
       propertyPath: m_Name
-      value: Space Heels
+      value: Space Heels Variant
       objectReference: {fileID: 0}
     - target: {fileID: 8309778951083579451, guid: 81db9be4d3f364fdc80ad522a2d4111a,
         type: 3}
@@ -70,7 +70,7 @@ PrefabInstance:
     - target: {fileID: 8093679764111587078, guid: 81db9be4d3f364fdc80ad522a2d4111a,
         type: 3}
       propertyPath: cardName
-      value: Space Heels
+      value: "Galilei\u2122 Heels"
       objectReference: {fileID: 0}
     - target: {fileID: 8093679764111587078, guid: 81db9be4d3f364fdc80ad522a2d4111a,
         type: 3}

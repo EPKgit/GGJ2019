@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cardName: Universal Translator
+  cardType: 2
   cardSuit: 2
   cardImage: {fileID: 21300000, guid: a2743cdd5a96749ffa05e6084e0497d6, type: 3}
   cardFlavorText: Coordinate your Items carefully.
@@ -25,6 +26,7 @@ MonoBehaviour:
   CouldRefuelVersion: {fileID: 0}
   mayRefuelAfter: 1
   mayTradeAfter: 1
+  passiveEffect: 0
   halfCard: {fileID: 0}
   starterCard: 0
   PlanetsScouted: 1
@@ -39,7 +41,7 @@ PrefabInstance:
     - target: {fileID: 3219587676086758066, guid: 920fa5c3c32294140ade55b9d9c3141f,
         type: 3}
       propertyPath: m_Name
-      value: Universal Translator
+      value: Universal Translator Variant
       objectReference: {fileID: 0}
     - target: {fileID: 6520528158445503433, guid: 920fa5c3c32294140ade55b9d9c3141f,
         type: 3}

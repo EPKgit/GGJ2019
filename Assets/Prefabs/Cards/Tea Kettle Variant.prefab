@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cardName: Tea Kettle
+  cardType: 2
   cardSuit: 2
   cardImage: {fileID: 21300000, guid: af931c11c180e4c51822670a2e4f97c5, type: 3}
   cardFlavorText: In a good home, there is no such thing as redundency.
@@ -24,6 +25,7 @@ MonoBehaviour:
   CouldRefuelVersion: {fileID: 0}
   mayRefuelAfter: 1
   mayTradeAfter: 1
+  passiveEffect: 0
   halfCard: {fileID: 0}
   starterCard: 0
 --- !u!1001 &5527828400170868472
@@ -36,7 +38,7 @@ PrefabInstance:
     - target: {fileID: 4839535320069132869, guid: dced493eecb7840f287e44c2fa33b1ee,
         type: 3}
       propertyPath: m_Name
-      value: Tea Kettle
+      value: Tea Kettle Variant
       objectReference: {fileID: 0}
     - target: {fileID: 3889614216014773054, guid: dced493eecb7840f287e44c2fa33b1ee,
         type: 3}
