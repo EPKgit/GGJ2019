@@ -33,6 +33,14 @@ public class Planet : MonoBehaviour
         // trades = new List<Card>(); these should not matter
         // connections = new List<Planet>();
     }
+
+    public void AddCards(Card[] cards){
+        foreach(Card c in cards){
+            if(c != null){
+                trades.Add(new PlanetTradeCard{card = c, revealed = false});
+            }
+        }
+    }
     
     void Update()
     {
@@ -44,10 +52,12 @@ public class Planet : MonoBehaviour
         //Debug.Log("enter");
         shouldDisplay = true;
         popupUI.gameObject.SetActive(true);
+        /*
         if(PlayerMovement.instance.currentPlanet.connections.Contains(this))
         {
             hoverSprite.SetActive(true);
         }
+        */
     }
 
     void OnMouseExit()
@@ -58,6 +68,11 @@ public class Planet : MonoBehaviour
         hoverSprite.SetActive(false);
     }
 
+    public void StartGlow()
+    {
+        hoverSprite.SetActive(true);
+    }
+
     public void HideGlow()
     {
         hoverSprite.SetActive(false);
@@ -65,7 +80,7 @@ public class Planet : MonoBehaviour
     
     void OnMouseDown()
     {
-        GameManager.instance.ClickInput(this);
+        GameManager.instance.SetPlanetOption(this);
     }
 
     // reveals up to i cards (pass 6 to reveal all)
@@ -103,6 +118,14 @@ public class PlanetEditor : Editor
         foreach(Planet p in t.connections)
         {
             EditorGUILayout.LabelField(p.name);
+        }
+        EditorGUI.indentLevel--;
+        EditorGUILayout.LabelField("-----------");
+        EditorGUILayout.LabelField("Cards");
+        EditorGUI.indentLevel++;
+        foreach(Planet.PlanetTradeCard p in t.trades)
+        {
+            EditorGUILayout.LabelField(p.card.cardName);
         }
         EditorGUI.indentLevel--;
         EditorGUILayout.LabelField("-----------");

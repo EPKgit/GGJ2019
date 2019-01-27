@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cardName: Space Lobster
+  cardType: 2
   cardSuit: 4
   cardImage: {fileID: 21300000, guid: a097fd94172fa4da598969a375f48870, type: 3}
   cardFlavorText: You need wealth to buy stuff.
@@ -24,6 +25,7 @@ MonoBehaviour:
   CouldRefuelVersion: {fileID: 0}
   mayRefuelAfter: 1
   mayTradeAfter: 1
+  passiveEffect: 0
   halfCard: {fileID: 0}
   starterCard: 0
 --- !u!1001 &2128659251054613238
@@ -36,7 +38,7 @@ PrefabInstance:
     - target: {fileID: 2048571903734808771, guid: 6716eef29ad354bdf88baf2d319c3f3d,
         type: 3}
       propertyPath: m_Name
-      value: Space Lobster
+      value: Space Lobster Variant
       objectReference: {fileID: 0}
     - target: {fileID: 7691630792300456376, guid: 6716eef29ad354bdf88baf2d319c3f3d,
         type: 3}

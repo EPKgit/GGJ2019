@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cardName: Ukea Jewelry Box
+  cardType: 2
   cardSuit: 3
   cardImage: {fileID: 21300000, guid: 5e619a4aa597e458696f10156210a0b2, type: 3}
   cardFlavorText: Do you really need anything not from Ukea?
@@ -38,7 +39,7 @@ PrefabInstance:
     - target: {fileID: 1318466475876687854, guid: 7041ac3240f6f4874978c5fee76355ef,
         type: 3}
       propertyPath: m_Name
-      value: Ukea Jewelry Box
+      value: Ukea Jewelry Box Variant
       objectReference: {fileID: 0}
     - target: {fileID: 7250784923611035285, guid: 7041ac3240f6f4874978c5fee76355ef,
         type: 3}

@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cardName: Toy Rocket
+  cardType: 1
   cardSuit: 5
   cardImage: {fileID: 21300000, guid: 6d8b441b6e17042e998f83b333c41da1, type: 3}
   cardFlavorText: People need food to survive.
@@ -40,7 +41,7 @@ PrefabInstance:
     - target: {fileID: 4710673814894203125, guid: c994436c8689089429975f9bbc1618c7,
         type: 3}
       propertyPath: m_Name
-      value: Toy Rocket
+      value: Toy Rocket Variant
       objectReference: {fileID: 0}
     - target: {fileID: 4002707066554890638, guid: c994436c8689089429975f9bbc1618c7,
         type: 3}

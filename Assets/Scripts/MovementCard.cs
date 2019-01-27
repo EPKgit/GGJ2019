@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using UnityEngine;
 
 public class MovementCard : Card {
 
@@ -29,9 +30,9 @@ public class MovementCard : Card {
                         found.Add(q);
                     }
                 }
-                unexplored = newUnexplored;
-                hopsLeft--;
             }
+            unexplored = newUnexplored;
+            hopsLeft--;
         }
         return found;
 

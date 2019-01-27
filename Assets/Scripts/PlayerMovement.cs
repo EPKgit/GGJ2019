@@ -13,25 +13,23 @@ public class PlayerMovement : MonoBehaviour
 
     private float currentRotationRads;
     
-    IEnumerator Start()
+    void Start()
     {
-        enabled = false;
-        while(currentPlanet == null)
-        {
-           yield return null;
-        }
-        enabled = true;
         if(instance != null)
         {
             Destroy(gameObject);
         }
         instance = this;
         currentRotationRads = 0f;
-        transform.position = currentPlanet.transform.position + Vector3.up * orbitDistance;
+        //transform.position = currentPlanet.transform.position + Vector3.up * orbitDistance;
     }
 
     void Update()
     {
+        if(currentPlanet == null)
+        {
+            return;
+        }
         //Debug.Log(currentRotationRads);
         currentRotationRads += Time.deltaTime / rotationPeriod * 2 * Mathf.PI;
         transform.position = currentPlanet.transform.position;

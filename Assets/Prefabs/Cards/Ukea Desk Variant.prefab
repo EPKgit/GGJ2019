@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cardName: Ukea Desk
+  cardType: 1
   cardSuit: 2
   cardImage: {fileID: 21300000, guid: 2eb9f3084e894460b87429b2d16d752b, type: 3}
   cardFlavorText: You need Toys to be happy.
@@ -24,6 +25,7 @@ MonoBehaviour:
   CouldRefuelVersion: {fileID: 0}
   mayRefuelAfter: 1
   mayTradeAfter: 1
+  passiveEffect: 0
   halfCard: {fileID: 0}
   starterCard: 0
   DoesTp: 0
@@ -39,7 +41,7 @@ PrefabInstance:
     - target: {fileID: 5443940945376971181, guid: 4a77be9745def4437b55641d2fd9ade4,
         type: 3}
       propertyPath: m_Name
-      value: Ukea Desk
+      value: Ukea Desk Variant
       objectReference: {fileID: 0}
     - target: {fileID: 4422278977089298646, guid: 4a77be9745def4437b55641d2fd9ade4,
         type: 3}

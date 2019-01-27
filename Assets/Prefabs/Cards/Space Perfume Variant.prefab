@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96244d6465d6240e383db59a7579fd3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cardName: Space Perfume
+  cardName: "Galilei\u2122 Perfume"
+  cardType: 2
   cardSuit: 3
   cardImage: {fileID: 21300000, guid: 3d997b85c0ffe4ac899f450b1fc428aa, type: 3}
   cardFlavorText: No one needs more than three Passives.
@@ -37,7 +38,7 @@ PrefabInstance:
     - target: {fileID: 6486068766365250502, guid: 1cc19fb4a031c4f56964587e313f82f5,
         type: 3}
       propertyPath: m_Name
-      value: Space Perfume
+      value: Space Perfume Variant
       objectReference: {fileID: 0}
     - target: {fileID: 3229345998132681405, guid: 1cc19fb4a031c4f56964587e313f82f5,
         type: 3}

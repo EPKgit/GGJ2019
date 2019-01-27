@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cardName: Address Book
+  cardType: 2
   cardSuit: 2
   cardImage: {fileID: 21300000, guid: b4b00d65257404840b2d982475004d88, type: 3}
   cardFlavorText: What can't you get from your friends?
@@ -24,6 +25,7 @@ MonoBehaviour:
   CouldRefuelVersion: {fileID: 0}
   mayRefuelAfter: 1
   mayTradeAfter: 1
+  passiveEffect: 0
   halfCard: {fileID: 0}
   starterCard: 0
 --- !u!1001 &2536077381266646543
@@ -36,7 +38,7 @@ PrefabInstance:
     - target: {fileID: 1125813182412967101, guid: 13210896d48f84dde9ec6571a2c34c17,
         type: 3}
       propertyPath: m_Name
-      value: Address Book
+      value: Address Book Variant
       objectReference: {fileID: 0}
     - target: {fileID: 8740472169519031750, guid: 13210896d48f84dde9ec6571a2c34c17,
         type: 3}

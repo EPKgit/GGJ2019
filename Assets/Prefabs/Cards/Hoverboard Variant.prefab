@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cardName: Hoverboard
+  cardType: 1
   cardSuit: 5
   cardImage: {fileID: 21300000, guid: 4c0c546497fb441f79999f42234870c7, type: 3}
   cardFlavorText: What is life but play? Just buy Toys!
@@ -40,7 +41,7 @@ PrefabInstance:
     - target: {fileID: 466855806716964552, guid: 53b1364ceafdc43ed91adb6ba5628473,
         type: 3}
       propertyPath: m_Name
-      value: Hoverboard
+      value: Hoverboard Variant
       objectReference: {fileID: 0}
     - target: {fileID: 8118106523210778547, guid: 53b1364ceafdc43ed91adb6ba5628473,
         type: 3}
