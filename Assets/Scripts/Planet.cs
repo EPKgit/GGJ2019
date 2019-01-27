@@ -12,6 +12,7 @@ public class Planet : MonoBehaviour
     [HideInInspector]public List<PlanetTradeCard> trades = new List<PlanetTradeCard>();
     [HideInInspector]public List<Planet> connections = new List<Planet>();
     public bool canRefuel;
+    public Card.Suit Suit;
     public string flavorText;
     public float spinSpeed = 0f;
 
