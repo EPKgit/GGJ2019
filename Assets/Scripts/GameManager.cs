@@ -35,9 +35,13 @@ public class GameManager : MonoBehaviour
 
     public void InputMove(Planet p)
     {
+        if(PlanetSideManager.instance != null)
+        {
+            PlanetSideManager.instance.comeFromMapScreen(p);
+        }
         playerMovement.currentPlanet = p;
         CameraController.instance.point = p.transform.position;
-        p.HideGlow();
+        //p.HideGlow();
     }
 
     public void setPlanets(List<GameObject> planets)

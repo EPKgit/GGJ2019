@@ -15,6 +15,7 @@ public class PlayerMovement : MonoBehaviour
     
     IEnumerator Start()
     {
+        enabled = false;
         while(currentPlanet == null)
         {
            yield return null;

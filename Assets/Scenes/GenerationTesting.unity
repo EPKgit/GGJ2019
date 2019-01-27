@@ -540,11 +540,11 @@ MonoBehaviour:
     m_Bits: 512
   old: 0
   numPlanets: 25
-  xStep: 3
-  yStep: 3
-  xRandRange: 2
-  yRandRange: 2
-  buildChance: 0
+  xStep: 5
+  yStep: 5
+  xRandRange: 1.6
+  yRandRange: 1.6
+  buildChance: 0.5
 --- !u!4 &2092963313
 Transform:
   m_ObjectHideFlags: 0
