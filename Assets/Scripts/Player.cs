@@ -8,4 +8,15 @@ public class Player : MonoBehaviour
     public Planet currentPlanet;
     public int fuel;
     public int fuelCap;
+
+    public void CleanUpHand()
+    {
+        for (int i = playerHand.Count - 1; i > -1; --i)
+        {
+            if (playerHand[i] == null)
+                playerHand.RemoveAt(i);
+        }
+
+        playerHand.TrimExcess();
+    }
 }
