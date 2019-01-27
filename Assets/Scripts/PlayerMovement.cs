@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+    public static PlayerMovement instance;
+
     public Planet currentPlanet;
 
     public float orbitDistance;
@@ -11,12 +13,17 @@ public class PlayerMovement : MonoBehaviour
 
     private float currentRotationRads;
     
-    void Start()
+    IEnumerator Start()
     {
-        if(currentPlanet == null)
+        while(currentPlanet == null)
+        {
+           yield return null;
+        }
+        if(instance != null)
         {
             Destroy(gameObject);
         }
+        instance = this;
         currentRotationRads = 0f;
         transform.position = currentPlanet.transform.position + Vector3.up * orbitDistance;
     }

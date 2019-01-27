@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1806125433439596351}
   - component: {fileID: 1806125433439596344}
   - component: {fileID: 1806125433439596345}
+  - component: {fileID: 5178792176486028556}
   m_Layer: 5
   m_Name: TestDraggableCard
   m_TagString: Untagged
@@ -93,12 +94,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   card: {fileID: 0}
   originalPosition: {x: 0, y: 0}
+  commerceManager: {fileID: 0}
   popUpWindow: {fileID: 1806125433716439739}
-  dragging: 0
+  beingDragged: 0
   cardName: {fileID: 1806125434113156238}
   cardImage: {fileID: 1806125434671923762}
   cardAbilityText: {fileID: 1806125433734238057}
   cardFlavorText: {fileID: 1806125433638798693}
+--- !u!225 &5178792176486028556
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1806125433439596347}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &1806125433638798695
 GameObject:
   m_ObjectHideFlags: 0

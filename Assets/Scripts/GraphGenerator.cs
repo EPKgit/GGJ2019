@@ -14,10 +14,14 @@ namespace GraphGeneration{
             }
         }
 
-        //*  main for testing
+        /*  main for testing
         public static void Main(){
-            Graph graph = Build(400, 400, 20.0f, 20.0f, 2.0f, 2.0f, 0.6f);
-            Console.WriteLine("Nodes: {0}, Edges: {1}", graph.Nodes.Count, graph.Edges.Count);
+            Graph graph = Build(5, 5, 3.0f, 3.0f, 2.0f, 2.0f, 0.0f);
+            HashSet<BuildingCC> ccs = new HashSet<BuildingCC>();
+            foreach(BuildingNode n in graph.Nodes){
+                ccs.Add(n.cc);
+            }
+            Console.WriteLine("Nodes: {0}, Edges: {1}, Connected Components: {2}", graph.Nodes.Count, graph.Edges.Count, ccs.Count);
         }
         //*/
 
@@ -50,7 +54,42 @@ namespace GraphGeneration{
                     }
                 }
             }
-            return new Graph{Nodes = grid.Nodes, Edges = edges};
+            Graph r = new Graph{Nodes = grid.Nodes, Edges = edges};
+            ConnectGraph(r, x);
+            return r;
+        }
+
+
+        internal static void ConnectGraph(Graph graph, int x){
+            Dictionary<BuildingCC, BuildingCC> changedIslands = new Dictionary<BuildingCC, BuildingCC>();
+            for(int i = 1; i < graph.Nodes.Count; i++){
+                if(changedIslands.ContainsKey(graph.Nodes[i].cc)){ //if the islands has already been changed, update it
+                    graph.Nodes[i].cc = changedIslands[graph.Nodes[i].cc];
+                }
+                if(i % x != 0){
+                    if(graph.Nodes[i].cc != graph.Nodes[i-1].cc){ //if we are in an island on one axis, connect it
+                        changedIslands[graph.Nodes[i].cc] = graph.Nodes[i-1].cc;
+                        graph.Nodes[i].cc = graph.Nodes[i-1].cc; 
+                        //add the edge
+                        BuildingEdge e = new BuildingEdge(graph.Nodes[i],graph.Nodes[i-1]);
+                        graph.Edges.Add(e);
+                        //build adjacencies
+                        e.Nodes[0].AdjacentNodes.Add(e.Nodes[1]);
+                        e.Nodes[1].AdjacentNodes.Add(e.Nodes[0]);
+                    }
+                }else{
+                    if(graph.Nodes[i].cc != graph.Nodes[i-x].cc){ //if we are in an island on one axis, connect it
+                        changedIslands[graph.Nodes[i].cc] = graph.Nodes[i-x].cc;
+                        graph.Nodes[i].cc = graph.Nodes[i-x].cc; 
+                        //add the edge
+                        BuildingEdge e = new BuildingEdge(graph.Nodes[i],graph.Nodes[i-x]);
+                        graph.Edges.Add(e);
+                        //build adjacencies
+                        e.Nodes[0].AdjacentNodes.Add(e.Nodes[1]);
+                        e.Nodes[1].AdjacentNodes.Add(e.Nodes[0]);
+                    }
+                }
+            }
         }
 
         internal static Graph BuildGrid(int x, int y, float xStep, float yStep, float xRandRange, float yRandRange){
@@ -63,7 +102,7 @@ namespace GraphGeneration{
                 for(int i = 0; i < x; i++){
                     //walk
                     xPos += xStep + 2*xRandRange*((float)Rand.NextDouble()) - xRandRange;
-                    yPos += yStep + 2*yRandRange*((float)Rand.NextDouble()) - yRandRange;
+                    yPos += 2*yRandRange*((float)Rand.NextDouble()) - yRandRange;
                     //init the node
                     BuildingNode node = new BuildingNode{cc = new BuildingCC(), xPos = xPos, yPos = yPos, prio = nodes.Count, AdjacentNodes = new List<BuildingNode>()};
                     //store it
@@ -80,6 +119,7 @@ namespace GraphGeneration{
                         edges.Add(new BuildingEdge(node, grid[i-1,j-1]));
                     }
                 }
+                yPos += yStep; 
             }
             return new Graph{Nodes = nodes, Edges = edges};
         }
