@@ -1096,6 +1096,8 @@ GameObject:
   - component: {fileID: 620974098}
   - component: {fileID: 620974097}
   - component: {fileID: 620974096}
+  - component: {fileID: 620974102}
+  - component: {fileID: 620974101}
   m_Layer: 5
   m_Name: PlanetSideScreen
   m_TagString: Untagged
@@ -1198,6 +1200,44 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &620974101
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 620974095}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e784c3d8cca04bf4fbd219ba28888c14, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  planet: {fileID: 0}
+  player: {fileID: 878189317}
+  comMan: {fileID: 620974102}
+--- !u!114 &620974102
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 620974095}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2413baef4d56e3241ae60045d461f605, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 878189317}
+  planet: {fileID: 0}
+  abilityChosen: 0
+  chosenTradeCard: {fileID: 0}
+  cardsLosing: 0
+  cardsGaining: 0
+  playerTradeHand: {fileID: 1741104287}
+  planetTradeHand: {fileID: 2092094028}
+  toPlayer: []
+  toPlanet: []
+  refuelValue: 4
 --- !u!1 &706289259
 GameObject:
   m_ObjectHideFlags: 0
@@ -1302,6 +1342,10 @@ MonoBehaviour:
   maxHandSize: 0
   fuel: 0
   fuelCap: 0
+  extraHops: 0
+  extaRefuel: 0
+  mayRefule: 1
+  mayTrade: 1
 --- !u!1 &884344235
 GameObject:
   m_ObjectHideFlags: 0

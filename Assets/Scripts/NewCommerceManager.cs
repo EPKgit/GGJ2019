@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class NewCommerceManager : MonoBehaviour
 {
     public Player player;
+    public PlanetSideManager planetFix;
     [HideInInspector] public Planet planet;
 
     //For ability choosing phase.
@@ -62,6 +63,7 @@ public class NewCommerceManager : MonoBehaviour
 
     private void Update()
     {
+
     /*
         //Player chooses ability.
         if (abilityChosen == true && abilityChoosingComplete == false && readyForTradeSetup == false)
@@ -265,7 +267,7 @@ public class NewCommerceManager : MonoBehaviour
     //      SUCCESSFUL TRADE
     //      SUCCESSFUL REFULE
     public void EndCommercePhase(){
-        
+        planetFix.returnToMapScreen();
     }
 
     

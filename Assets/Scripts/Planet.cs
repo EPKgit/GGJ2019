@@ -30,6 +30,7 @@ public class Planet : MonoBehaviour
         spriteTransform.gameObject.GetComponent<SpriteRenderer>().sprite = icon;
         hoverSprite = transform.GetChild(1).gameObject;
         hoverSprite.SetActive(false);
+        canRefuel = true;
         // trades = new List<Card>(); these should not matter
         // connections = new List<Planet>();
     }
