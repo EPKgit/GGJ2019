@@ -204,7 +204,8 @@ public class GameManager : MonoBehaviour
         ResetListeners();
         SetAllSlotsOff();
         //Debug.Log(chosenCard);
-        HashSet<Planet> planetsAvail = (chosenCard as MovementCard).GetHopTargets(playerMovement.currentPlanet, 0);
+        HashSet<Planet> planetsAvail = (chosenCard as MovementCard).GetHopTargets(playerMovement.currentPlanet, player.extraHops);
+        player.extraHops = 0;
         foreach(Planet p in planetsAvail)
         {
             p.StartGlow();
