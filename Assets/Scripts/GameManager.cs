@@ -16,6 +16,7 @@ public class GameManager : MonoBehaviour
     private List<GameObject> planetList;
     private float currentHandSize;
     private Card chosenCard;
+    private Planet chosenPlanet;
 
     void Start()
     {
@@ -49,6 +50,7 @@ public class GameManager : MonoBehaviour
 
     public void InputMove(Planet p)
     {
+        chosenPlanet = null;
         if(PlanetSideManager.instance != null)
         {
             PlanetSideManager.instance.comeFromMapScreen(p);
@@ -69,7 +71,9 @@ public class GameManager : MonoBehaviour
         GameObject temp = GameObject.FindWithTag("Player");
         playerMovement = temp.GetComponent<PlayerMovement>();
         player = temp.GetComponent<Player>();
-        player.currentPlanet = planets[0].GetComponent<Planet>();
+        if(playerMovement.currentPlanet == null) {
+            playerMovement.currentPlanet = planets[0].GetComponent<Planet>();
+        }
         StartCoroutine(WaitForMoveInput());
     }
 
@@ -79,6 +83,10 @@ public class GameManager : MonoBehaviour
     {
         pickedMoveOption = true;
         chosenCard = c;
+    }
+    public void SetPlanetOption(Planet p)
+    {
+        chosenPlanet = p;
     }
 
     void CheckLegalMoves()
@@ -153,11 +161,24 @@ public class GameManager : MonoBehaviour
         yield return new WaitUntil( () => player.playerHand.Count != 0);
         CheckLegalMoves();
         yield return new WaitUntil( () => pickedMoveOption);
+        pickedMoveOption = false;
         ResetListeners();
         SetAllSlotsOff();
         Debug.Log(chosenCard);
-        //HashSet<Planet> planetsAvail = 
-        //Debug.Log("MIOVINGKNSDF");
-
+        HashSet<Planet> planetsAvail = (chosenCard as MovementCard).GetHopTargets(playerMovement.currentPlanet, 0);
+        foreach(Planet p in planetsAvail)
+        {
+            p.StartGlow();
+        }
+        while(!planetsAvail.Contains(chosenPlanet))
+        {
+            chosenPlanet = null;
+            while(chosenPlanet == null)
+            {
+                Debug.Log("busy wait");
+                yield return null;
+            }
+        }
+        InputMove(chosenPlanet);
     }
 }
