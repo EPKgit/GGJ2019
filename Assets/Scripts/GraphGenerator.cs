@@ -63,7 +63,7 @@ namespace GraphGeneration{
                 for(int i = 0; i < x; i++){
                     //walk
                     xPos += xStep + 2*xRandRange*((float)Rand.NextDouble()) - xRandRange;
-                    yPos += yStep + 2*yRandRange*((float)Rand.NextDouble()) - yRandRange;
+                    yPos += 2*yRandRange*((float)Rand.NextDouble()) - yRandRange;
                     //init the node
                     BuildingNode node = new BuildingNode{cc = new BuildingCC(), xPos = xPos, yPos = yPos, prio = nodes.Count, AdjacentNodes = new List<BuildingNode>()};
                     //store it
@@ -80,6 +80,7 @@ namespace GraphGeneration{
                         edges.Add(new BuildingEdge(node, grid[i-1,j-1]));
                     }
                 }
+                yPos += yStep; 
             }
             return new Graph{Nodes = nodes, Edges = edges};
         }
