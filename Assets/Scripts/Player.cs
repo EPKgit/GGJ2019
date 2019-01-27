@@ -6,7 +6,7 @@ public class Player : MonoBehaviour
 {
     public Card[] startingHand;
     public List<Card> playerHand;
-    public Planet currentPlanet;
+    public Planet currentPlanet;    //This is useless but I have no idea if someone else is using it.
     public int maxHandSize;
     public int fuel;
     public int fuelCap;

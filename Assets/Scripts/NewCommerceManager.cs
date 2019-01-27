@@ -40,6 +40,23 @@ public class NewCommerceManager : MonoBehaviour
         {
             TradingMenu.SetActive(false);
         }
+
+        if (PlayerMovement.instance != null)
+        {
+            if (PlayerMovement.instance.currentPlanet == null)
+            {
+                Debug.Log("NewCommerceManager: PlayerMovement's currentPlanet is null.");
+            }
+            else
+            {
+                planet = PlayerMovement.instance.currentPlanet;
+            }
+        }
+        else
+        {
+            Debug.Log("NewCommerceManager: PlayerMovement instance is null.");
+        }
+
         AbilityChoicePhase();
     }
 
