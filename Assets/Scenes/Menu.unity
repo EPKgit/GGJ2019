@@ -1084,7 +1084,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   defaultSpaceTheme: {fileID: 8300000, guid: 671c5d128aa7f5b4eb0f89531cf9fc14, type: 3}
-  fadeInTime: 3
+  fadeInTime: 1
 --- !u!4 &2044977738
 Transform:
   m_ObjectHideFlags: 0

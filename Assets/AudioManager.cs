@@ -40,11 +40,13 @@ public class AudioManager : MonoBehaviour
         {
             crossFade.clip = newClip;
             crossFade.Play();
+            crossFade.time = Time.time;
         }
         else
         {
             source.clip = newClip;
             source.Play();
+            source.time = Time.time;
         }
         float timer = 0f;
         while(timer < fadeInTime)
