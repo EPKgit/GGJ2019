@@ -7,18 +7,24 @@ public class TradingButtonControl : MonoBehaviour
     [HideInInspector] public Planet planet;
     public Player player;
 
+    public NewCommerceManager comMan;
+
     public void TradeButtonPressed()
     {
         if(CurrentPlanetCheck())
         {
-            //Check if transaction is valid.
-                //If valid, do transaction.
-                //Else, send warning.
+            if(CheckValidTrade(comMan.chosenTradeCard, comMan.toPlayer,
+                    comMan.toPlanet, player.fuel)){
+                TradeCardsAndFuel(toPlayer, toPlanet, -comMan.chosenTradeCard.fuelCost);
+                comMan.EndCommercePhase();
+            }else{
+                Debug.Log("Illegal Trade");
+            }
         }
     }
 
-    public void CheckValidTrade(TradeCard trade)
-    {
+    public bool CheckValidTrade(TradeCard trade, List<Card> toPlayer, List<Card> toPlanet, int fuel){
+        return trade.IsLegalTrade(fuel, toPlanet, toPlayer);
     }
 
 
@@ -72,6 +78,8 @@ public class TradingButtonControl : MonoBehaviour
             ptc.card = c;
             planet.trades.Add(ptc);
         }
+
+        // TODO: RESOLVE CARD SPECIAL EFFECTS MAYBE NOPE
     }
 
     private bool CurrentPlanetCheck()

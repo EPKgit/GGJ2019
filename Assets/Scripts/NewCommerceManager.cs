@@ -26,6 +26,11 @@ public class NewCommerceManager : MonoBehaviour
     public GameObject playerTradeHand;
     public GameObject planetTradeHand;
 
+    public List<Card> toPlayer;
+    public List<Card> toPlanet;
+
+    public int refuelValue = 4;
+
     void Start()
     {
         abilityChosen = false;
@@ -65,6 +70,7 @@ public class NewCommerceManager : MonoBehaviour
 
     private void Update()
     {
+    /*
         //Player chooses ability.
         if (abilityChosen == true && abilityChoosingComplete == false && readyForTradeSetup == false)
         {
@@ -85,8 +91,10 @@ public class NewCommerceManager : MonoBehaviour
             Debug.Log("9: Setting up trade menu.");
             SetUpTradeMenu();
         }
+    */
 
     }
+
 
     public void SetUpTradeMenu()
     {
@@ -125,6 +133,24 @@ public class NewCommerceManager : MonoBehaviour
     public void SetChosenTradeCard(Card card)
     {
         chosenTradeCard = card as TradeCard;
+        toPlanet = new List<Card>();
+        toPlayer = new List<Card>();
+    }
+
+    public void ToggleTrading(Card card, GameObject owner){
+        if(owner == playerTradeHand){
+            if(toPlanet.Contains(card)){
+                toPlanet.Remove(card);
+            }else{
+                toPlanet.Add(card);
+            }
+        }else{
+            if(toPlayer.Contains(card)){
+                toPlayer.Remove(card);
+            }else{
+                toPlanet.Add(card);
+            }
+        }
     }
 
     public void SetAbilityChosen(bool active)
@@ -146,7 +172,7 @@ public class NewCommerceManager : MonoBehaviour
             if (player.playerHand[i].cardType == Card.Type.TRADE)
             {
                 //Check if trade card is usable for player.
-                if (player.playerHand[i].Usable(player.fuel, player.playerHand))
+                if (player.playerHand[i].Usable(player.fuel, player.playerHand) && player.playerHand[i].Type == Card.Type.TRADE)
                 {
                     UsableAbilityCards.Add(player.playerHand[i]);
                 }
@@ -176,6 +202,26 @@ public class NewCommerceManager : MonoBehaviour
         }
     }
 
+    // TO BE CALLED BY THE CARD BUTTONS
+    // TAKE THE ASSOCIATED DATA TYPE either PLAYER TRADE HAND OR PLANET TRADE HAND
+    public void CardClickedOn(Card card, GameObject owner){
+        if(!abilityChoosingComplete && UsableAbilityCards.Contains(card)){
+            SetChosenTradeCard(card);
+            TradeAbilityChosenPhase();
+        }else if(abilityChoosingComplete){
+             ToggleTrading(card, owner);
+        }
+
+    }
+
+    // TO BE CALLED BY THE REFUEL BUTTON
+    public void Refule(){
+        if(planet.canRefuel){
+            player.fuel += refuelValue;
+            planet.canRefuel = false;
+        }
+    }
+
     public void TradeAbilityChosenPhase()
     {
         Debug.Log("7: Starting trade setup.");
@@ -187,5 +233,25 @@ public class NewCommerceManager : MonoBehaviour
         AbilityChoiceMenu.SetActive(false);
         abilityChoosingComplete = true;
         readyForTradeSetup = true;
+        if(!tradeMenuReady){
+            SetUpTradeMenu();
+        }
     }
+
+    // TO BE CALLED BY CANCEL TRADE
+    public void LeaveTradeAbilityChosenPhase(){
+        Dubug.Log("Leaving Trade Ability Chosen Phase");
+        AbilityChoiceMenu.SetActive(false);
+        abilityChoosingComplete = false;
+        readyForTradeSetup = false;
+    }
+
+    // TO BE CALLED BY:
+    //      SUCCESSFUL TRADE
+    //      SUCCESSFUL REFULE
+    public void EndCommercePhase(){
+        
+    }
+
+    
 }
