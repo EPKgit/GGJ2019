@@ -2202,6 +2202,8 @@ MonoBehaviour:
   - {fileID: 252831980}
   - {fileID: 1976959278}
   - {fileID: 288175108}
+  playerMovement: {fileID: 0}
+  player: {fileID: 0}
 --- !u!4 &1786704240
 Transform:
   m_ObjectHideFlags: 0
@@ -2616,7 +2618,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84af6e21251defe49b01b56ecaba1ef3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  allCards: []
+  allCards:
+  - {fileID: 324598392189111280, guid: 3dfd589693dc13849a64288172d00e29, type: 3}
+  - {fileID: 3715251432365128372, guid: 01f39a5b020787746a4c3757628bc4f9, type: 3}
+  - {fileID: 3357119397318824410, guid: 9cd5daf89735e9b4398a13c13a187e6b, type: 3}
+  - {fileID: 3999508280734371362, guid: 6ae7a165114078349a01113b02a48e6b, type: 3}
+  - {fileID: 4725642845691520200, guid: 174b6051de88dfd44a31b78681cb6001, type: 3}
   bigCard: {fileID: 0}
 --- !u!4 &2020412093
 Transform:

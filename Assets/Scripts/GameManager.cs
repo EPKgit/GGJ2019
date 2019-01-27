@@ -11,8 +11,8 @@ public class GameManager : MonoBehaviour
     public LayerMask planetLayer;
     public GameObject[] hand;
 
-    private PlayerMovement playerMovement;
-    private Player player;
+    public PlayerMovement playerMovement;
+    public Player player;
     private List<GameObject> planetList;
 
     void Start()
@@ -23,7 +23,6 @@ public class GameManager : MonoBehaviour
         }
         instance = this;
         DontDestroyOnLoad(gameObject);  
-        StartCoroutine(WaitForMoveInput()); 
     }
 
     IEnumerator GameSceneInit()
@@ -31,11 +30,12 @@ public class GameManager : MonoBehaviour
         GameObject temp = null;
         while(temp == null)
         {
-            temp = GameObject.FindGameObjectWithTag("Player");
+            temp = GameObject.FindWithTag("Player");
             yield return null;
         }
         playerMovement = temp.GetComponent<PlayerMovement>();
         player = temp.GetComponent<Player>();
+        StartCoroutine(WaitForMoveInput()); 
     }
 
     public void GoToGameScene()

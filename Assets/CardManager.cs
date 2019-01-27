@@ -10,13 +10,19 @@ public class CardManager : MonoBehaviour
 
     private List<GameObject> cards;
 
-    void Start()
+    IEnumerator Start()
     {
+        cards = new List<GameObject>();
+        yield return new WaitUntil( () => GameManager.instance != null);
         foreach(GameObject g in allCards)
         {
-            GameObject temp = Instantiate(g, Vector3.one * 9999, Quaternion.identity);
+            GameObject temp = Instantiate(g, Vector3.one * 9999, Quaternion.identity, transform);
+            temp.GetComponent<HalfCard>().card.halfCard = temp;
             cards.Add(temp);
-            //if(temp.GetComponent<HalfCard>().card.)
+            if(temp.GetComponent<HalfCard>().card.starterCard)
+            {
+                GameManager.instance.player.playerHand.Add(temp.GetComponent<HalfCard>().card);
+            }
         }
     }
 }
