@@ -5,6 +5,8 @@ using UnityEngine;
 public class CardManager : MonoBehaviour
 {
     public GameObject[] allCards;
+
+    public GameObject bigCard;
     void Start()
     {
         
