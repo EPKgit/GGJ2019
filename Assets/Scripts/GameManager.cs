@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -19,13 +20,23 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
         }
         instance = this;
-        DontDestroyOnLoad(gameObject);
-        player = GameObject.FindGameObjectWithTag("Player");
+        DontDestroyOnLoad(gameObject);   
+    }
+    IEnumerator GameSceneInit()
+    {
+        while(player == null)
+        {
+            player = GameObject.FindGameObjectWithTag("Player");
+            yield return null;
+        }
         playerMovement = player.GetComponent<PlayerMovement>();
     }
 
-    void Update()
+    public void GoToGameScene()
     {
+        SceneManager.LoadScene("SampleScene");
+        AudioManager.instance.SetMusic();
+        StartCoroutine(GameSceneInit());
     }
 
     public void ClickInput(Planet p)
@@ -39,7 +50,11 @@ public class GameManager : MonoBehaviour
         {
             PlanetSideManager.instance.comeFromMapScreen(p);
         }
-        playerMovement.currentPlanet = p;
+        if(AudioManager.instance != null)
+        {
+            AudioManager.instance.SetMusic(p.theme);
+        }
+        PlayerMovement.instance.currentPlanet = p;
         CameraController.instance.point = p.transform.position;
         //p.HideGlow();
     }

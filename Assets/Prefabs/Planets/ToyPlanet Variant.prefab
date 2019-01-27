@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &8181554839088397446
+--- !u!1001 &5783970599153907907
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -10,7 +10,7 @@ PrefabInstance:
     - target: {fileID: 263233540749961018, guid: 1c25f1657425d704a84fee3c9594fda1,
         type: 3}
       propertyPath: m_Name
-      value: WildWestPlanet Variant
+      value: ToyPlanet Variant
       objectReference: {fileID: 0}
     - target: {fileID: 4909677570673939339, guid: 1c25f1657425d704a84fee3c9594fda1,
         type: 3}
@@ -71,23 +71,29 @@ PrefabInstance:
         type: 3}
       propertyPath: icon
       value: 
-      objectReference: {fileID: 21300000, guid: 513389ed66f155341939a5216b24e314,
+      objectReference: {fileID: 21300000, guid: 56deae4c1c5d72e46bd3e68a7ce7e3f2,
         type: 3}
-    - target: {fileID: 3301800816500797430, guid: 1c25f1657425d704a84fee3c9594fda1,
-        type: 3}
-      propertyPath: spinSpeed
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: 3301800816500797430, guid: 1c25f1657425d704a84fee3c9594fda1,
         type: 3}
       propertyPath: background
       value: 
-      objectReference: {fileID: 21300000, guid: 073dd7bc0252dd04a8787f62a96677f0,
+      objectReference: {fileID: 21300000, guid: 415454149d1a2d44eaed55f00e70f010,
         type: 3}
+    - target: {fileID: 3301800816500797430, guid: 1c25f1657425d704a84fee3c9594fda1,
+        type: 3}
+      propertyPath: spinSpeed
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 3301800816500797430, guid: 1c25f1657425d704a84fee3c9594fda1,
         type: 3}
       propertyPath: theme
       value: 
-      objectReference: {fileID: 8300000, guid: 98ddd77cd3fc89c4f9edd34200ba2bb0, type: 3}
+      objectReference: {fileID: 8300000, guid: 9bfe91343caa81746b4267d919ae80b5, type: 3}
+    - target: {fileID: 6247747631728898852, guid: 1c25f1657425d704a84fee3c9594fda1,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 56deae4c1c5d72e46bd3e68a7ce7e3f2,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1c25f1657425d704a84fee3c9594fda1, type: 3}

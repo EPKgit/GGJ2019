@@ -35,6 +35,7 @@ public class PlanetSideManager : MonoBehaviour
     public void returnToMapScreen()
     {
         gameObject.SetActive(false);
+        AudioManager.instance.SetMusic();
     }
     
     

@@ -9,6 +9,7 @@ public class Planet : MonoBehaviour
 {
     public Sprite icon;
     public Sprite background;
+    public AudioClip theme;
     [HideInInspector]public List<Card> trades = new List<Card>();
     [HideInInspector]public List<Planet> connections = new List<Planet>();
     public bool canRefuel;
