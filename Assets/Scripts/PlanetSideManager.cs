@@ -8,6 +8,7 @@ public class PlanetSideManager : MonoBehaviour
     public static PlanetSideManager instance;
 
     private Image planetScreen;
+    private Text planetText;
     
     void Awake()
     {
@@ -19,6 +20,7 @@ public class PlanetSideManager : MonoBehaviour
         gameObject.SetActive(false);
 
         planetScreen = transform.GetChild(0).GetComponent<Image>();
+        planetText = transform.GetChild(1).GetComponent<Text>();
     }
 
     void Update()
@@ -30,6 +32,7 @@ public class PlanetSideManager : MonoBehaviour
     {
         Debug.Log("comefrom");
         planetScreen.sprite = p.background;
+        planetText.text = p.flavorText;
         gameObject.SetActive(true);
     }
 

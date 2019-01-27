@@ -89,5 +89,17 @@ PrefabInstance:
       propertyPath: theme
       value: 
       objectReference: {fileID: 8300000, guid: 123ecf127bd7baf4c96c4b84ee575530, type: 3}
+    - target: {fileID: 3301800816500797430, guid: 1c25f1657425d704a84fee3c9594fda1,
+        type: 3}
+      propertyPath: flavorText
+      value: 'Indrusta is an industrial planet with an economy focused on the design
+        and manufacture of machinery. There is an upper-class region with company
+        headquarters to design products such as holomaps, holophones, and handheld
+        gaming systems. These devices are then manufactured in the working-class factory
+        district, then exported across the galaxy. Indrusta  has moderate to chilly
+        temperatures and perpetual thunderstorms on the entire surface of the planet,
+        though thanks to modern technology these storms are artificially halted in
+        cities and surrounding peripheral regions. '
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1c25f1657425d704a84fee3c9594fda1, type: 3}

@@ -89,6 +89,16 @@ PrefabInstance:
       propertyPath: theme
       value: 
       objectReference: {fileID: 8300000, guid: 9bfe91343caa81746b4267d919ae80b5, type: 3}
+    - target: {fileID: 3301800816500797430, guid: 1c25f1657425d704a84fee3c9594fda1,
+        type: 3}
+      propertyPath: flavorText
+      value: 'Plaepala has an economy based on the design and manufacture of toys
+        and other forms of entertainment, such as amusement parks and movie production.
+        Life moves very quickly on Plaepala, as the whimsical, joyful atmosphere of
+        the planet only exists due to the cutthroat business lifestyle of the inhabitants.
+        This planet has moderate to warm temperatures, and is known for clear skies
+        and tall trees with long palm fronds. '
+      objectReference: {fileID: 0}
     - target: {fileID: 6247747631728898852, guid: 1c25f1657425d704a84fee3c9594fda1,
         type: 3}
       propertyPath: m_Sprite

@@ -89,5 +89,15 @@ PrefabInstance:
       propertyPath: theme
       value: 
       objectReference: {fileID: 8300000, guid: 6e031b8f749fb8f4c9b08dc15ced0700, type: 3}
+    - target: {fileID: 1546309056543651648, guid: bfa146a2056d4894ca2f356e2b74a214,
+        type: 3}
+      propertyPath: flavorText
+      value: 'Ukea is a member of the KEA planet enterprise. This chain provides everything
+        an Astromedon family could ever need -- furniture, home appliances, starship
+        repair parts, and so much more! Many people come to Ukea just to visit, stock
+        up on fuel and Nordic Meatspheres, and then be on their way. But some decide
+        to stay and become part of the KEA community, living in one of the housing
+        complexes in the residential district. Come visit Ukea today! '
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bfa146a2056d4894ca2f356e2b74a214, type: 3}

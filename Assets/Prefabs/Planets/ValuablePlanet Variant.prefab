@@ -89,5 +89,15 @@ PrefabInstance:
       propertyPath: theme
       value: 
       objectReference: {fileID: 8300000, guid: c896c95df90393c4d9052036ab9b4195, type: 3}
+    - target: {fileID: 3301800816500797430, guid: 1c25f1657425d704a84fee3c9594fda1,
+        type: 3}
+      propertyPath: flavorText
+      value: 'Argentia is part of the shopping district of the galaxy, birthplace
+        of the galaxywide phenomenon of Stardust Coffee. The residents are high-class,
+        appreciating an economy based on luxury goods and high culture. In particular,
+        Argentia is known for its art, theater, and fashion industries. For most of
+        the year, the weather is quite temperate, though one season is rather chilly
+        (allowing for the inhabitants to make use of their bearcoon fur coats). '
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1c25f1657425d704a84fee3c9594fda1, type: 3}
