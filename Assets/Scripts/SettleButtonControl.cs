@@ -20,7 +20,7 @@ public class SettleButtonControl : MonoBehaviour
 
     public void ConfirmationPressed()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        SceneManager.LoadScene("EndScreen");
     }
 
     public void DeconfirmationPressed()
