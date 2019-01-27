@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cardName: Holographic Galaxy Map
+  cardType: 1
   cardSuit: 2
   cardImage: {fileID: 21300000, guid: bec62f80c7e76444d8283370c6ef8e5b, type: 3}
   cardFlavorText: Flushes of the same suit are usually good.
@@ -25,6 +26,7 @@ MonoBehaviour:
   CouldRefuelVersion: {fileID: 0}
   mayRefuelAfter: 1
   mayTradeAfter: 1
+  passiveEffect: 0
   halfCard: {fileID: 0}
   starterCard: 0
   DoesTp: 0
@@ -40,7 +42,7 @@ PrefabInstance:
     - target: {fileID: 4710673814894203125, guid: c994436c8689089429975f9bbc1618c7,
         type: 3}
       propertyPath: m_Name
-      value: Holographic Galaxy Map
+      value: Holographic Galaxy Map Variant
       objectReference: {fileID: 0}
     - target: {fileID: 4002707066554890638, guid: c994436c8689089429975f9bbc1618c7,
         type: 3}

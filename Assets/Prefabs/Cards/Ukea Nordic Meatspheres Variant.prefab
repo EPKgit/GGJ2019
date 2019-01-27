@@ -10,7 +10,7 @@ PrefabInstance:
     - target: {fileID: 4710673814894203125, guid: c994436c8689089429975f9bbc1618c7,
         type: 3}
       propertyPath: m_Name
-      value: Ukea Nordic Meatspheres
+      value: Ukea Nordic Meatspheres Variant
       objectReference: {fileID: 0}
     - target: {fileID: 4002707066554890638, guid: c994436c8689089429975f9bbc1618c7,
         type: 3}
@@ -92,6 +92,11 @@ PrefabInstance:
         type: 3}
       propertyPath: cardAbilityText
       value: 'Triggers whenever you Refuel. Move 1 additional Hop on your next Move. '
+      objectReference: {fileID: 0}
+    - target: {fileID: 1582937189982655951, guid: c994436c8689089429975f9bbc1618c7,
+        type: 3}
+      propertyPath: cardType
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c994436c8689089429975f9bbc1618c7, type: 3}

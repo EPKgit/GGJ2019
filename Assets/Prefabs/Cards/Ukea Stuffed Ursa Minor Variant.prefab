@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cardName: Ukea Stuffed Ursa Minor
+  cardType: 2
   cardSuit: 5
   cardImage: {fileID: 21300000, guid: 80c21a070d2c344c196a577f278fd7fc, type: 3}
   cardFlavorText: You need value... and look! You already have it.
@@ -38,7 +39,7 @@ PrefabInstance:
     - target: {fileID: 4710673814894203125, guid: c994436c8689089429975f9bbc1618c7,
         type: 3}
       propertyPath: m_Name
-      value: Ukea Stuffed Ursa Minor
+      value: Ukea Stuffed Ursa Minor Variant
       objectReference: {fileID: 0}
     - target: {fileID: 4002707066554890638, guid: c994436c8689089429975f9bbc1618c7,
         type: 3}

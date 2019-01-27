@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44283d20dd017476583bf2030a994e71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cardName: Space Mirror Cube
+  cardName: Puzzle Cube
+  cardType: 2
   cardSuit: 5
   cardImage: {fileID: 21300000, guid: 9efbd695166d6874ca4f607f202150dd, type: 3}
   cardFlavorText: You need Diplomacy to make friends that aren't stuffed.
@@ -38,7 +39,7 @@ PrefabInstance:
     - target: {fileID: 4710673814894203125, guid: c994436c8689089429975f9bbc1618c7,
         type: 3}
       propertyPath: m_Name
-      value: Space Mirror Cube
+      value: Space Mirror Cube Variant
       objectReference: {fileID: 0}
     - target: {fileID: 4002707066554890638, guid: c994436c8689089429975f9bbc1618c7,
         type: 3}

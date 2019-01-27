@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cardName: Speed of Lite (Beer)
+  cardType: 2
   cardSuit: 4
   cardImage: {fileID: 21300000, guid: df22bee948cbc4463bd4338ecfc27b4c, type: 3}
   cardFlavorText: You want at least 2 Fuel production.
@@ -25,6 +26,7 @@ MonoBehaviour:
   CouldRefuelVersion: {fileID: 0}
   mayRefuelAfter: 1
   mayTradeAfter: 1
+  passiveEffect: 0
   halfCard: {fileID: 0}
   starterCard: 0
 --- !u!1001 &2858974314940098963
@@ -37,7 +39,7 @@ PrefabInstance:
     - target: {fileID: 137211377650504245, guid: fb5b3964d7cda40cbabb10243c6ca948,
         type: 3}
       propertyPath: m_Name
-      value: Speed of Lite (Beer)
+      value: Speed of Lite (Beer) Variant
       objectReference: {fileID: 0}
     - target: {fileID: 8589680860707683150, guid: fb5b3964d7cda40cbabb10243c6ca948,
         type: 3}

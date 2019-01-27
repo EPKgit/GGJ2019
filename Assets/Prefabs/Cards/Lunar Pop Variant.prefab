@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cardName: Lunar Pop
+  cardType: 1
   cardSuit: 4
   cardImage: {fileID: 21300000, guid: a8d9e6cb0645240dc9d2bc7c7c1be354, type: 3}
   cardFlavorText: You want plenty of Fuel for space travel.
@@ -41,7 +42,7 @@ PrefabInstance:
     - target: {fileID: 4710673814894203125, guid: c994436c8689089429975f9bbc1618c7,
         type: 3}
       propertyPath: m_Name
-      value: Lunar Pop
+      value: Lunar Pop Variant
       objectReference: {fileID: 0}
     - target: {fileID: 4002707066554890638, guid: c994436c8689089429975f9bbc1618c7,
         type: 3}

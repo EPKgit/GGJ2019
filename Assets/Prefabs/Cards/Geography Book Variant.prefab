@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cardName: Geography Book
+  cardType: 1
   cardSuit: 2
   cardImage: {fileID: 21300000, guid: 6139109af543e43d7981bf6364f487b6, type: 3}
   cardFlavorText: Moving is stressful - no one needs more than three.
@@ -24,6 +25,7 @@ MonoBehaviour:
   CouldRefuelVersion: {fileID: 0}
   mayRefuelAfter: 1
   mayTradeAfter: 1
+  passiveEffect: 0
   halfCard: {fileID: 0}
   starterCard: 0
   DoesTp: 0
@@ -39,7 +41,7 @@ PrefabInstance:
     - target: {fileID: 1992626207863139519, guid: f76e7e7ed092744ff8ff1da2f3a5a190,
         type: 3}
       propertyPath: m_Name
-      value: Geography Book
+      value: Geography Book Variant
       objectReference: {fileID: 0}
     - target: {fileID: 7887191375121417668, guid: f76e7e7ed092744ff8ff1da2f3a5a190,
         type: 3}

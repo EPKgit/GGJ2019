@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33bf99d22da8e41fe8ab2b9c49a1d7f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cardName: Fancy Painting
+  cardName: Luna Lisa Portrait
+  cardType: 2
   cardSuit: 3
   cardImage: {fileID: 21300000, guid: 23a3ebe362b164cfe9a45e697d0a45c0, type: 3}
   cardFlavorText: A good home is a well-rounded home.
@@ -37,7 +38,7 @@ PrefabInstance:
     - target: {fileID: 1481954675650097498, guid: 6bc1cb79b28b34faaaf7402eda45e79a,
         type: 3}
       propertyPath: m_Name
-      value: Fancy Painting
+      value: Fancy Painting Variant
       objectReference: {fileID: 0}
     - target: {fileID: 7080540225170675745, guid: 6bc1cb79b28b34faaaf7402eda45e79a,
         type: 3}

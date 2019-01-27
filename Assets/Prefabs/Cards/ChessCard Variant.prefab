@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cardName: Chess Set
+  cardType: 2
   cardSuit: 2
   cardImage: {fileID: 21300000, guid: 0070920de02cd45819f03221455712e9, type: 3}
   cardFlavorText: People will try to decieve you.
@@ -24,6 +25,7 @@ MonoBehaviour:
   CouldRefuelVersion: {fileID: 0}
   mayRefuelAfter: 1
   mayTradeAfter: 1
+  passiveEffect: 0
   halfCard: {fileID: 0}
   starterCard: 0
 --- !u!1001 &6906978861240975925
@@ -36,7 +38,7 @@ PrefabInstance:
     - target: {fileID: 2086291524400435312, guid: 26fb13118159041f98dd8eaaaa99fa63,
         type: 3}
       propertyPath: m_Name
-      value: ChessCard
+      value: ChessCard Variant
       objectReference: {fileID: 0}
     - target: {fileID: 7647159620451449099, guid: 26fb13118159041f98dd8eaaaa99fa63,
         type: 3}
