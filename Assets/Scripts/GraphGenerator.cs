@@ -62,8 +62,8 @@ namespace GraphGeneration{
                 float xPos= (j%2 == 0)? 0 : yStep/2; // stagger the rows
                 for(int i = 0; i < x; i++){
                     //walk
-                    xPos += 2*xRandRange*((float)Rand.NextDouble()) - xRandRange;
-                    yPos += 2*yRandRange*((float)Rand.NextDouble()) - yRandRange;
+                    xPos += xStep + 2*xRandRange*((float)Rand.NextDouble()) - xRandRange;
+                    yPos += yStep + 2*yRandRange*((float)Rand.NextDouble()) - yRandRange;
                     //init the node
                     BuildingNode node = new BuildingNode{cc = new BuildingCC(), xPos = xPos, yPos = yPos, prio = nodes.Count, AdjacentNodes = new List<BuildingNode>()};
                     //store it
