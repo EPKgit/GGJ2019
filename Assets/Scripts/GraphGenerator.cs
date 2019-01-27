@@ -14,7 +14,7 @@ namespace GraphGeneration{
             }
         }
 
-        /*  main for testing
+        //*  main for testing
         public static void Main(){
             Graph graph = Build(400, 400, 20.0f, 20.0f, 2.0f, 2.0f, 0.6f);
             Console.WriteLine("Nodes: {0}, Edges: {1}", graph.Nodes.Count, graph.Edges.Count);
@@ -36,6 +36,9 @@ namespace GraphGeneration{
                 // add the edge
                 if(willDisconnect || Rand.NextDouble() < buildChance){ 
                     edges.Add(e);
+                    //build adjacencies
+                    e.Nodes[0].AdjacentNodes.Add(e.Nodes[1]);
+                    e.Nodes[1].AdjacentNodes.Add(e.Nodes[0]);
                     //assuming edges make a strict ordering
                     BuildingCC cc = e.Nodes[0].cc;
                     cc.outgoingEdges += e.Nodes[1].cc.outgoingEdges - 1;
@@ -62,7 +65,7 @@ namespace GraphGeneration{
                     xPos += 2*xRandRange*((float)Rand.NextDouble()) - xRandRange;
                     yPos += 2*yRandRange*((float)Rand.NextDouble()) - yRandRange;
                     //init the node
-                    BuildingNode node = new BuildingNode{cc = new BuildingCC(), xPos = xPos, yPos = yPos, prio = nodes.Count};
+                    BuildingNode node = new BuildingNode{cc = new BuildingCC(), xPos = xPos, yPos = yPos, prio = nodes.Count, AdjacentNodes = new List<BuildingNode>()};
                     //store it
                     nodes.Add(node);
                     grid[i,j] = node;
@@ -96,6 +99,7 @@ namespace GraphGeneration{
             internal BuildingCC cc;
             public float xPos;
             public float yPos;
+            public List<BuildingNode> AdjacentNodes;
             internal int prio; //must be unique among nodes to give a strict ordering
         }
 

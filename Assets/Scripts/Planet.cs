@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEditor;
+using UnityEngine.UI;
 
 public class Planet : MonoBehaviour
 {
@@ -11,12 +12,48 @@ public class Planet : MonoBehaviour
     [HideInInspector]public List<Card> trades = new List<Card>();
     [HideInInspector]public List<Planet> connections = new List<Planet>();
     public bool canRefuel;
-    public Text flavorText;
+    public string flavorText;
+    public float spinSpeed = 0f;
+
+    private bool shouldDisplay;
+    private Transform spriteTransform;
+    private Canvas popupUI;
+    private GameObject hoverSprite;
 
     void Start()
     {
+        popupUI = transform.GetChild(2).gameObject.GetComponent<Canvas>();
+        popupUI.gameObject.SetActive(false);
+        spriteTransform = transform.GetChild(0);
+        spriteTransform.gameObject.GetComponent<SpriteRenderer>().sprite = icon;
+        hoverSprite = transform.GetChild(1).gameObject;
+        hoverSprite.SetActive(false);
         // trades = new List<Card>();
         // connections = new List<Planet>();
+    }
+    
+    void Update()
+    {
+        spriteTransform.Rotate(0f, 0f, spinSpeed * Time.deltaTime);
+    }
+
+    void OnMouseEnter()
+    {
+        Debug.Log("enter");
+        shouldDisplay = true;
+        popupUI.gameObject.SetActive(true);
+    }
+
+    void OnMouseExit()
+    {
+        Debug.Log("exit");
+        shouldDisplay = false;
+        popupUI.gameObject.SetActive(false);
+    }
+    
+    void OnMouseDown()
+    {
+        GameManager.instance.ClickInput(this);
     }
 }
 
