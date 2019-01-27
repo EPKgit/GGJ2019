@@ -9,7 +9,7 @@ public class Planet : MonoBehaviour
     public Sprite icon;
     public Sprite background;
     public AudioClip theme;
-    [HideInInspector]public List<PlanetTradeCard> trades = new List<PlanetTradeCard>();
+    [HideInInspector] public List<PlanetTradeCard> trades = new List<PlanetTradeCard>();
     [HideInInspector]public List<Planet> connections = new List<Planet>();
     public bool canRefuel;
     public Card.Suit Suit;
@@ -30,7 +30,7 @@ public class Planet : MonoBehaviour
         spriteTransform.gameObject.GetComponent<SpriteRenderer>().sprite = icon;
         hoverSprite = transform.GetChild(1).gameObject;
         hoverSprite.SetActive(false);
-        // trades = new List<Card>();
+        // trades = new List<Card>(); these should not matter
         // connections = new List<Planet>();
     }
     

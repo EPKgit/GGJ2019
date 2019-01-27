@@ -11,15 +11,16 @@ public class TradingButtonControl : MonoBehaviour
 
     public void TradeButtonPressed()
     {
-        if(CurrentPlanetCheck())
+
+        if (CheckValidTrade(comMan.chosenTradeCard, comMan.toPlayer,
+                comMan.toPlanet, player.fuel))
         {
-            if(CheckValidTrade(comMan.chosenTradeCard, comMan.toPlayer,
-                    comMan.toPlanet, player.fuel)){
-                TradeCardsAndFuel(comMan.toPlayer, comMan.toPlanet, -comMan.chosenTradeCard.fuelCost);
-                comMan.EndCommercePhase();
-            }else{
-                Debug.Log("Illegal Trade");
-            }
+            TradeCardsAndFuel(comMan.toPlayer, comMan.toPlanet, -comMan.chosenTradeCard.fuelCost);
+            comMan.EndCommercePhase();
+        }
+        else
+        {
+            Debug.Log("Illegal Trade");
         }
     }
 
@@ -40,7 +41,7 @@ public class TradingButtonControl : MonoBehaviour
         //Removing from player first.
         foreach (Card c in toPlanet)
         {
-            int index = player.playerHand.FindIndex(x => x.cardName == c.cardName);
+            int index = player.playerHand.FindIndex(x => x == c);
 
             if (index == -1)
             {
@@ -53,7 +54,7 @@ public class TradingButtonControl : MonoBehaviour
         //Removing from planet
         foreach (Card c in toPlayer)
         {
-            int index = planet.trades.FindIndex(x => x.card.cardName == c.cardName);
+            int index = planet.trades.FindIndex(x => x.card == c);
 
             if (index == -1)
             {
@@ -82,29 +83,6 @@ public class TradingButtonControl : MonoBehaviour
         // TODO: RESOLVE CARD SPECIAL EFFECTS MAYBE NOPE
     }
 
-    private bool CurrentPlanetCheck()
-    {
-        //Uses instance of PlayerMovement script.
-        if (PlayerMovement.instance != null)
-        {
-            Debug.Log("TradeButtonControl: PlayerMovement Instance found.");
 
-            if (PlayerMovement.instance.currentPlanet != null)
-            {
-                Debug.Log("TradeButtonControl: Planet has been found.");
-                return true;
-            }
-            else
-            {
-                Debug.Log("TradeButtonControl: Planet has not been found.");
-                return false;
-            }
-        }
-        else
-        {
-            Debug.Log("TradeButtonControl: PlayerMovement instance could not be found.");
-            return false;
-        }
     }
 
-}

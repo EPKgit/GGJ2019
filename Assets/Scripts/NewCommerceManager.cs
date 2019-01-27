@@ -9,7 +9,7 @@ public class NewCommerceManager : MonoBehaviour
     [HideInInspector] public Planet planet;
 
     //For ability choosing phase.
-    public GameObject AbilityChoiceMenu;
+    //public GameObject AbilityChoiceMenu;
     [HideInInspector] public bool abilityChosen;
     [HideInInspector] public TradeCard chosenTradeCard;
 
@@ -21,8 +21,8 @@ public class NewCommerceManager : MonoBehaviour
 
     //For trading menu set-up phase.
     private bool tradeMenuReady;
-    public GameObject TradingMenu;
-    public Image landscape;
+    //public GameObject TradingMenu;
+    //public Image landscape;
     public GameObject playerTradeHand;
     public GameObject planetTradeHand;
 
@@ -31,41 +31,33 @@ public class NewCommerceManager : MonoBehaviour
 
     public int refuelValue = 4;
 
-    void Start()
+    IEnumerator Start()
     {
         abilityChosen = false;
         abilityChoosingComplete = false;
         readyForTradeSetup = false;
         tradeMenuReady = false;
 
-        
+        /*
         if (AbilityChoiceMenu.activeSelf == true)
         {
             AbilityChoiceMenu.SetActive(false);
         }
-        
+        */
+
+        /*
         if (TradingMenu.activeSelf == true)
         {
             TradingMenu.SetActive(false);
         }
+        */
 
-        if (PlayerMovement.instance != null)
-        {
-            if (PlayerMovement.instance.currentPlanet == null)
-            {
-                Debug.Log("NewCommerceManager: PlayerMovement's currentPlanet is null.");
-            }
-            else
-            {
-                planet = PlayerMovement.instance.currentPlanet;
-            }
-        }
-        else
-        {
-            Debug.Log("NewCommerceManager: PlayerMovement instance is null.");
-        }
+        yield return new WaitUntil(() => PlayerMovement.instance != null);
+        yield return new WaitUntil(() => PlayerMovement.instance.currentPlanet != null);
+        planet = PlayerMovement.instance.currentPlanet;
 
         AbilityChoicePhase();
+        SetUpTradeMenu();
     }
 
     private void Update()
@@ -98,11 +90,12 @@ public class NewCommerceManager : MonoBehaviour
 
     public void SetUpTradeMenu()
     {
-        Debug.Log("10: Setting up landscape.");
-        landscape.sprite = planet.background;
-        TradingMenu.SetActive(true);
+        //Debug.Log("10: Setting up landscape.");
+        //landscape.sprite = planet.background;
+        //TradingMenu.SetActive(true);
 
 
+        /*
         //Preparing player trade hand.
         Debug.Log("11: Player trade hand setup.");
         for (int i = 0; i < player.playerHand.Count; ++i)
@@ -112,6 +105,7 @@ public class NewCommerceManager : MonoBehaviour
             playerCard.GetComponent<TradingPhaseCard>().owner = "Player";
             playerCard.GetComponent<TradingPhaseCard>().card = player.playerHand[i];
         }
+        */
 
         //Preparing planet trade hand.
         Debug.Log("12: Planet trade hand setup.");
@@ -128,29 +122,6 @@ public class NewCommerceManager : MonoBehaviour
         Debug.Log("13: Trade Menu setup is complete.");
         tradeMenuReady = true;
         
-    }
-
-    public void SetChosenTradeCard(Card card)
-    {
-        chosenTradeCard = card as TradeCard;
-        toPlanet = new List<Card>();
-        toPlayer = new List<Card>();
-    }
-
-    public void ToggleTrading(Card card, GameObject owner){
-        if(owner == playerTradeHand){
-            if(toPlanet.Contains(card)){
-                toPlanet.Remove(card);
-            }else{
-                toPlanet.Add(card);
-            }
-        }else{
-            if(toPlayer.Contains(card)){
-                toPlayer.Remove(card);
-            }else{
-                toPlanet.Add(card);
-            }
-        }
     }
 
     public void SetAbilityChosen(bool active)
@@ -188,9 +159,10 @@ public class NewCommerceManager : MonoBehaviour
 
         Debug.Log("3: Number of usable trade cards is " + UsableAbilityCards.Count + ".");
         //Open menu for choosable abilities.
-        AbilityChoiceMenu.gameObject.SetActive(true);
+        //AbilityChoiceMenu.gameObject.SetActive(true);
 
 
+        /*
         Debug.Log("4");
         //Spawn choosable ability cards for trade.
         for (int i = 0; i < UsableAbilityCards.Count; ++i)
@@ -199,6 +171,43 @@ public class NewCommerceManager : MonoBehaviour
             blankTradeAbilityCard.transform.SetParent(AbilityChoiceMenu.transform, false);
             blankTradeAbilityCard.GetComponent<AbilityChoiceCardButton>().card = UsableAbilityCards[i];
             blankTradeAbilityCard.GetComponent<AbilityChoiceCardButton>().commerceManager = this;
+        }
+        */
+    }
+
+    public void SetChosenTradeCard(Card card)
+    {
+        chosenTradeCard = card as TradeCard;
+        toPlanet = new List<Card>();
+        toPlayer = new List<Card>();
+    }
+
+    //Looks at GameObject that holds all the UI cards.
+    public void ToggleTrading(Card card, GameObject owner)
+    {
+        //If gameobject is player's trade hand.
+        //Literally toggles the cards in toPlanet and toPlayer
+        if (owner == playerTradeHand)
+        {
+            if (toPlanet.Contains(card))
+            {
+                toPlanet.Remove(card);
+            }
+            else
+            {
+                toPlanet.Add(card);
+            }
+        }
+        else
+        {
+            if (toPlayer.Contains(card))
+            {
+                toPlayer.Remove(card);
+            }
+            else
+            {
+                toPlanet.Add(card);
+            }
         }
     }
 
@@ -219,6 +228,12 @@ public class NewCommerceManager : MonoBehaviour
         if(planet.canRefuel){
             player.fuel += refuelValue;
             planet.canRefuel = false;
+            Debug.Log("Refueling.");
+            EndCommercePhase();
+        }
+        else
+        {
+            Debug.Log("Not refueling.");
         }
     }
 
@@ -230,7 +245,7 @@ public class NewCommerceManager : MonoBehaviour
 
         //Close ability choice menu.
         Debug.Log("8: Closing Ability Choice Menu.");
-        AbilityChoiceMenu.SetActive(false);
+        //AbilityChoiceMenu.SetActive(false);
         abilityChoosingComplete = true;
         readyForTradeSetup = true;
         if(!tradeMenuReady){
@@ -241,7 +256,7 @@ public class NewCommerceManager : MonoBehaviour
     // TO BE CALLED BY CANCEL TRADE
     public void LeaveTradeAbilityChosenPhase(){
         Debug.Log("Leaving Trade Ability Chosen Phase");
-        AbilityChoiceMenu.SetActive(false);
+        //AbilityChoiceMenu.SetActive(false);
         abilityChoosingComplete = false;
         readyForTradeSetup = false;
     }
