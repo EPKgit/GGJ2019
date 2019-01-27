@@ -11,9 +11,6 @@ public class Player : MonoBehaviour
     public int fuel;
     public int fuelCap;
 
-    public GameObject HandHolder;
-    public GameObject[] slots;
-
     void Start()
     {
         playerHand = new List<Card>(startingHand);

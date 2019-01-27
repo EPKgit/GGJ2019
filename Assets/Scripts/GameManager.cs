@@ -2,15 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
 
     public LayerMask planetLayer;
+    public GameObject[] hand;
 
-    private GameObject player;
     private PlayerMovement playerMovement;
+    private Player player;
     private List<GameObject> planetList;
 
     void Start()
@@ -20,16 +22,20 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
         }
         instance = this;
-        DontDestroyOnLoad(gameObject);   
+        DontDestroyOnLoad(gameObject);  
+        StartCoroutine(WaitForMoveInput()); 
     }
+
     IEnumerator GameSceneInit()
     {
-        while(player == null)
+        GameObject temp = null;
+        while(temp == null)
         {
-            player = GameObject.FindGameObjectWithTag("Player");
+            temp = GameObject.FindGameObjectWithTag("Player");
             yield return null;
         }
-        playerMovement = player.GetComponent<PlayerMovement>();
+        playerMovement = temp.GetComponent<PlayerMovement>();
+        player = temp.GetComponent<Player>();
     }
 
     public void GoToGameScene()
@@ -64,5 +70,33 @@ public class GameManager : MonoBehaviour
     {
         planetList = planets;
         InputMove(planets[0].GetComponent<Planet>());
+    }
+
+    private bool pickedMoveOption;
+    public void setMoveOption()
+    {
+        pickedMoveOption = true;
+    }
+    void CheckLegalMoves()
+    {
+        int index = 0;
+        foreach(Card c in player.playerHand)
+        {
+            if(c.Usable(player.fuel, player.playerHand))
+            {
+                hand[index].GetComponent<Image>().enabled = true;
+            }
+            else
+            {
+                hand[index].GetComponent<Image>().enabled = false;
+            }
+        }
+    }
+    IEnumerator WaitForMoveInput()
+    {
+        yield return new WaitUntil( () => player.playerHand.Count != 0);
+        CheckLegalMoves();
+        yield return new WaitUntil( () => pickedMoveOption);
+
     }
 }
