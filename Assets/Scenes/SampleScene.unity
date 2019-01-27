@@ -2275,6 +2275,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 51254388}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1697174266 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 699971391012967238, guid: 696500249a245dd4d9385ae8dc7ed272,
+    type: 3}
+  m_PrefabInstance: {fileID: 317365250}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80cef1d53a6d11448b55f61ca72ae9b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1741104287
 GameObject:
   m_ObjectHideFlags: 0
@@ -2352,7 +2364,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1000
   m_TargetDisplay: 0
 --- !u!224 &1741104291
 RectTransform:
@@ -2520,7 +2532,7 @@ PrefabInstance:
         type: 3}
       propertyPath: currentPlanet
       value: 
-      objectReference: {fileID: 1816106785}
+      objectReference: {fileID: 1697174266}
     - target: {fileID: 7654529974045419663, guid: ef68f6134dad4d6408601f0ee67675b0,
         type: 3}
       propertyPath: rotationPeriod
@@ -2695,18 +2707,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1816106785 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 9049579673461249845, guid: 9f643ba24fa54534fba3d1cb47aa456d,
-    type: 3}
-  m_PrefabInstance: {fileID: 2059150132}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 80cef1d53a6d11448b55f61ca72ae9b4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1844707425
 PrefabInstance:
   m_ObjectHideFlags: 0
