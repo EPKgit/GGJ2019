@@ -8,6 +8,8 @@ public class Card : MonoBehaviour
     public enum Suit { NONE, MACHINE, DIP, VALUABLE, FOOD, TOY}
     public enum Type { NONE, MOVEMENT, TRADE, PASSIVE }
 
+    public enum PassiveEffect{ NONE, FRUIT, MEATBALL, PARTS, DS}
+
     public static CardPred[] AnyOne = new CardPred[]{new CardPred()};
     public static CardPred[] AnyTwo = new CardPred[]{new CardPred(),new CardPred()};
     public static CardPred[] AnyThree = new CardPred[]{new CardPred(),new CardPred(),new CardPred()};
@@ -33,6 +35,8 @@ public class Card : MonoBehaviour
     // DOES THIS CARD IMPOSE RESTRICTIONS ON YOUR NEXT PLANET ACTION
     public bool mayRefuelAfter = true;
     public bool mayTradeAfter = true; 
+    // HOW PASSIVES ARE IMPLEMENTED
+    public PassiveEffect passiveEffect = PassiveEffect.NONE;
 
     public GameObject halfCard;
 

@@ -1,0 +1,105 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &438153562545773032
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2759128740447943590}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c41707681ad9a4238b181ba34fb4d0e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cardName: Speed of Lite (Beer)
+  cardSuit: 4
+  cardImage: {fileID: 21300000, guid: df22bee948cbc4463bd4338ecfc27b4c, type: 3}
+  cardFlavorText: You want at least 2 Fuel production.
+  cardAbilityText: 'Any 2 Items. Gain any 1 Item; gain 6 Fuel if you could Refuel
+    at this planet. '
+  fuelCost: 0
+  fuelReward: 0
+  hopsReward: 0
+  extraRefuelReward: 0
+  CouldRefuelVersion: {fileID: 0}
+  mayRefuelAfter: 1
+  mayTradeAfter: 1
+  halfCard: {fileID: 0}
+  starterCard: 0
+--- !u!1001 &2858974314940098963
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 137211377650504245, guid: fb5b3964d7cda40cbabb10243c6ca948,
+        type: 3}
+      propertyPath: m_Name
+      value: Speed of Lite (Beer)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8589680860707683150, guid: fb5b3964d7cda40cbabb10243c6ca948,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8589680860707683150, guid: fb5b3964d7cda40cbabb10243c6ca948,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8589680860707683150, guid: fb5b3964d7cda40cbabb10243c6ca948,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8589680860707683150, guid: fb5b3964d7cda40cbabb10243c6ca948,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8589680860707683150, guid: fb5b3964d7cda40cbabb10243c6ca948,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8589680860707683150, guid: fb5b3964d7cda40cbabb10243c6ca948,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8589680860707683150, guid: fb5b3964d7cda40cbabb10243c6ca948,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8589680860707683150, guid: fb5b3964d7cda40cbabb10243c6ca948,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8589680860707683150, guid: fb5b3964d7cda40cbabb10243c6ca948,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8589680860707683150, guid: fb5b3964d7cda40cbabb10243c6ca948,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8589680860707683150, guid: fb5b3964d7cda40cbabb10243c6ca948,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 57917290156292986, guid: fb5b3964d7cda40cbabb10243c6ca948, type: 3}
+  m_SourcePrefab: {fileID: 100100000, guid: fb5b3964d7cda40cbabb10243c6ca948, type: 3}
+--- !u!1 &2759128740447943590 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 137211377650504245, guid: fb5b3964d7cda40cbabb10243c6ca948,
+    type: 3}
+  m_PrefabInstance: {fileID: 2858974314940098963}
+  m_PrefabAsset: {fileID: 0}
