@@ -4,11 +4,20 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    public Card[] startingHand;
     public List<Card> playerHand;
     public Planet currentPlanet;
     public int maxHandSize;
     public int fuel;
     public int fuelCap;
+
+    public GameObject HandHolder;
+    public GameObject[] slots;
+
+    void Start()
+    {
+        playerHand = new List<Card>(startingHand);
+    }
 
     public void CleanUpHand()
     {

@@ -17,6 +17,13 @@ public class Card : MonoBehaviour
     public int fuelReward;
     public int cardReward;
 
+    public GameObject halfSizeCard;
+    public GameObject fullSizeCard;
+
+    void Start()
+    {
+        
+    }
     //public bool ownedByPlayer;
     //Ability cardAbility;
     //each UI card should have a Card datatype of the card itself
