@@ -111,29 +111,6 @@ public class NewCommerceManager : MonoBehaviour
         abilityChosen = active;
     }
 
-    public bool TradeAbilityCardUsable(Card tradeCard)
-    {
-        //Check if we go over fuel cost.
-        if (tradeCard.fuelCost > player.fuel)
-        {
-            Debug.Log("Not enough fuel. Trade card not used.");
-            return false;
-        }
-        //Check if we go over card cost.
-        if (tradeCard.cardCost > player.playerHand.Count)
-        {
-            Debug.Log("Not enough cards. Trade card not used.");
-            return false;
-        }
-        //Check if we go over max hand size with transaction.
-        if (tradeCard.cardReward + player.playerHand.Count - tradeCard.cardCost > player.maxHandSize)
-        {
-            Debug.Log("Transaction would go over max hand size. Trade card not used.");
-            return false;
-        }
-        return true;
-    }
-
     public void AbilityChoicePhase()
     {
         Debug.Log("1");
@@ -148,7 +125,7 @@ public class NewCommerceManager : MonoBehaviour
             if (player.playerHand[i].cardType == "Trade")
             {
                 //Check if trade card is usable for player.
-                if (TradeAbilityCardUsable(player.playerHand[i]) == true)
+                if (player.playerHand[i].Usable(player.fuel, player.playerHand))
                 {
                     UsableAbilityCards.Add(player.playerHand[i]);
                 }

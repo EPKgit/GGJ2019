@@ -6,9 +6,10 @@ public class Card : MonoBehaviour
 {
 
     public enum Suit { MACHINE, DIP, VALUABLE, FOOD, TOY}
+    public enum Type { MOVEMENT, TRADE, PASSIVE }
 
     public string cardName;
-    public string cardType;
+    public Type cardType;
     public Suit cardSuit;
     public Sprite cardImage;
     public string cardFlavorText;
@@ -16,9 +17,7 @@ public class Card : MonoBehaviour
 
     //For trading costs and transactions.
     public int fuelCost;
-    public CostCost[] cardCost;
-    public int fuelReward;
-    public int cardReward;
+    public CardPred[] cardCost;
 
     public GameObject halfSizeCard;
     public GameObject fullSizeCard;
@@ -27,25 +26,65 @@ public class Card : MonoBehaviour
     {
         
     }
+    public bool Usable(int fuel, List<Card> hand)
+    {
+        int fuel = player.fuel;
+        List<Card> hand = player.playerCard;
+        //Check if we go over fuel cost.
+        if (tradeCard.fuelCost > fuel)
+        {
+            Debug.Log("Not enough fuel. Trade card not used.");
+            return false;
+        }
+        //Check if we go over card cost.
+        if (tradeCard.cardCost.Length > hand.Count)
+        {
+            Debug.Log("Not enough cards. Trade card not used.");
+            return false;
+        }else{
+            HashSet<Card> usedCards = new HashSet<Card>();
+            foreach(auto cost in tradeCard.cardCost){
+                bool found = false;
+                foreach(Card c in hand){
+                    if(cost.CanPayWith(c)){
+                        usedCards.Add(c);
+                        found = true;
+                        break;
+                    }
+                }
+                if(!found){
+                    return false;
+                }
+            }
+        }
+    }
+
     //public bool ownedByPlayer;
     //Ability cardAbility;
     //each UI card should have a Card datatype of the card itself
 
     // card cost objects
-    public class CardCost{
+    public class CardPred{
         public virtual bool CanPayWith(Card c){
             return true;
         }
     }
 
-    public class SuitCardCost : CardCost{
+    public class TypeCardPred : CardPred{
+        public Type Type;
+        public override bool CanPayWith(Card c){
+            return c.cardType = Type;
+        }
+    }
+
+    public class SuitCardPred : CardPred{
         public Suit Suit;
         public override bool CanPayWith(Card c){
             return c.cardSuit == Suit;
         }
     }
 
-    public class SpecificCardCost : CardCost{
+    public class SpecificCardPred : CardPred{
         public Card Card;
         public override bool CanPayWith(Card c){
             return c == Card;
