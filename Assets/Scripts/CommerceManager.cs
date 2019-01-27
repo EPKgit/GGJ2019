@@ -52,6 +52,8 @@ public class CommerceManager : MonoBehaviour
             blankCard.transform.position = new Vector2(canvasLeftBorder + handSpacingPlayer * (i + 1), canvasBottomBorder);
             blankCard.GetComponent<DraggableCard>().card = player.playerHand[i];
             blankCard.GetComponent<DraggableCard>().LoadCard();
+            blankCard.GetComponent<DraggableCard>().commerceManager = this;
+            blankCard.GetComponent<DraggableCard>().cardOwner = "player";
             //playerCards.Add(blankCard.GetComponent<DraggableCard>());
         }
 
@@ -64,6 +66,8 @@ public class CommerceManager : MonoBehaviour
             blankCard.transform.position = new Vector2(canvasLeftBorder + handSpacingPlanet * (i + 1), canvasTopBorder);
             blankCard.GetComponent<DraggableCard>().card = player.playerHand[i];
             blankCard.GetComponent<DraggableCard>().LoadCard();
+            blankCard.GetComponent<DraggableCard>().commerceManager = this;
+            blankCard.GetComponent<DraggableCard>().cardOwner = "planet";
             //planetCards.Add(blankCard.GetComponent<DraggableCard>());
         }
     }

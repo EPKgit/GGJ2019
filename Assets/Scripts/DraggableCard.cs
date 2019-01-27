@@ -4,13 +4,14 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class DraggableCard : MonoBehaviour, IDragHandler, IEndDragHandler, IPointerEnterHandler, IPointerExitHandler
+public class DraggableCard : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler, IPointerEnterHandler, IPointerExitHandler, IDropHandler
 {
+    [HideInInspector] public string cardOwner;
     [HideInInspector] public Card card;
     [HideInInspector] public Vector2 originalPosition;
     [HideInInspector] public CommerceManager commerceManager;
-    public GameObject popUpWindow;
-    [HideInInspector] public bool dragging;
+    [HideInInspector] public GameObject popUpWindow;
+    [HideInInspector] public bool beingDragged;
 
 
     //Card Display Data
@@ -22,7 +23,7 @@ public class DraggableCard : MonoBehaviour, IDragHandler, IEndDragHandler, IPoin
     void Start()
     {
         originalPosition = this.transform.position;
-        dragging = false;
+        beingDragged = false;
     }
 
     public void LoadCard()
@@ -33,14 +34,20 @@ public class DraggableCard : MonoBehaviour, IDragHandler, IEndDragHandler, IPoin
         cardFlavorText.text = card.cardFlavorText;
     }
     
-    //Handles dragging of Game Object in the UI with the mouse cursor.
-    public void OnDrag(PointerEventData eventData)
+    public void OnBeginDrag(PointerEventData eventData)
     {
-        dragging = true;
-        this.transform.position = eventData.position;
+        beingDragged = true;
 
         if (popUpWindow.activeSelf)
             popUpWindow.SetActive(false);
+
+        this.GetComponent<CanvasGroup>().blocksRaycasts = false;
+    }
+
+    //Handles dragging of Game Object in the UI with the mouse cursor.
+    public void OnDrag(PointerEventData eventData)
+    {
+        this.transform.position = eventData.position;
     }
 
     //Game Object returns to original position once dragging is complete.
@@ -49,14 +56,16 @@ public class DraggableCard : MonoBehaviour, IDragHandler, IEndDragHandler, IPoin
         /* if card is over another card, they swap places
          * else, card returns to its original position
         */
-        dragging = false;
+        beingDragged = false;
+
+        this.GetComponent<CanvasGroup>().blocksRaycasts = true;
         this.transform.position = originalPosition;
     }
 
     public void OnPointerEnter(PointerEventData eventData)
     {
         //Debug.Log("OnPointerOver");
-        if (!dragging)
+        if (!eventData.dragging)
         {
             popUpWindow.SetActive(true);
         }
@@ -65,5 +74,38 @@ public class DraggableCard : MonoBehaviour, IDragHandler, IEndDragHandler, IPoin
     public void OnPointerExit(PointerEventData eventData)
     {
         popUpWindow.SetActive(false);
+    }
+
+    public void OnDrop(PointerEventData eventData)
+    {
+        //Swapping
+        if (!beingDragged)
+        {
+            Debug.Log("Swapping " + eventData.pointerDrag.GetComponent<DraggableCard>().cardName.text + " with " + cardName.text);
+
+            Vector2 temp = this.originalPosition;
+
+            this.originalPosition = eventData.pointerDrag.GetComponent<DraggableCard>().originalPosition;
+            eventData.pointerDrag.GetComponent<DraggableCard>().originalPosition = temp;
+            this.transform.position = this.originalPosition;
+
+            //Checks if you're just swapping around in the hand or not
+            if (this.cardOwner != eventData.pointerDrag.GetComponent<DraggableCard>().cardOwner)
+            {
+                Player player = commerceManager.player;
+                Planet planet = commerceManager.currentPlanet;
+
+                //int playerCardIndex = player.playerHand.FindIndex()
+
+                //Action has now been taken this turn
+                Debug.Log("Action has been taken.");
+                //commerceManager.ActionTaken();
+            }
+            else
+            {
+                Debug.Log("Same ownership. Action has not been taken.");
+            }
+            
+        }
     }
 }
