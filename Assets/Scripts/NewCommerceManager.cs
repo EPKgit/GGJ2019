@@ -61,6 +61,33 @@ public class NewCommerceManager : MonoBehaviour
         SetUpTradeMenu();
     }
 
+    void OnEnable()
+    {
+        abilityChosen = false;
+        abilityChoosingComplete = false;
+        readyForTradeSetup = false;
+        tradeMenuReady = false;
+
+        /*
+        if (AbilityChoiceMenu.activeSelf == true)
+        {
+            AbilityChoiceMenu.SetActive(false);
+        }
+        */
+
+        /*
+        if (TradingMenu.activeSelf == true)
+        {
+            TradingMenu.SetActive(false);
+        }
+        */
+
+        planet = PlayerMovement.instance.currentPlanet;
+
+        AbilityChoicePhase();
+        SetUpTradeMenu();
+    }
+
     private void Update()
     {
 
