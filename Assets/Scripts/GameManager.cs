@@ -36,6 +36,7 @@ public class GameManager : MonoBehaviour
     {
         SceneManager.LoadScene("SampleScene");
         AudioManager.instance.SetMusic();
+        AudioManager.instance.SetMenuTime(Time.time);
         StartCoroutine(GameSceneInit());
     }
 

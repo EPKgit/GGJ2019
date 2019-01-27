@@ -12,6 +12,7 @@ public class AudioManager : MonoBehaviour
     private AudioSource source;
     private AudioSource crossFade;
     private bool onMainSource;
+    private float menutime = 0f;
 
     void Start()
     {
@@ -40,13 +41,13 @@ public class AudioManager : MonoBehaviour
         {
             crossFade.clip = newClip;
             crossFade.Play();
-            crossFade.time = Time.time;
+            crossFade.time = Time.time - menutime;
         }
         else
         {
             source.clip = newClip;
             source.Play();
-            source.time = Time.time;
+            source.time = Time.time - menutime;
         }
         float timer = 0f;
         while(timer < fadeInTime)
@@ -69,9 +70,8 @@ public class AudioManager : MonoBehaviour
         onMainSource = !onMainSource;
     }
 
-    // Update is called once per frame
-    void Update()
+    public void SetMenuTime(float time)
     {
-        
+        menutime = time;
     }
 }
