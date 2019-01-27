@@ -1,0 +1,108 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &8792254663305588149
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7847090418849763135}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0944f78e91fb43f09b119658db0f6de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cardName: Holographic Comm System
+  cardSuit: 1
+  cardImage: {fileID: 21300000, guid: 25d73cff514114fbbb91b81849c81cf0, type: 3}
+  cardFlavorText: What could you need that machines can't provide?
+  cardAbilityText: '2 Fuel. Move to any [Machine Planet]. '
+  fuelCost: 0
+  fuelReward: 0
+  hopsReward: 0
+  extraRefuelReward: 0
+  CouldRefuelVersion: {fileID: 0}
+  mayRefuelAfter: 1
+  mayTradeAfter: 1
+  passiveEffect: 0
+  halfCard: {fileID: 0}
+  starterCard: 0
+  DoesTp: 0
+  DoesHop: 1
+  hops: 0
+--- !u!1001 &3294906260250009546
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4710673814894203125, guid: c994436c8689089429975f9bbc1618c7,
+        type: 3}
+      propertyPath: m_Name
+      value: Card
+      objectReference: {fileID: 0}
+    - target: {fileID: 4002707066554890638, guid: c994436c8689089429975f9bbc1618c7,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4002707066554890638, guid: c994436c8689089429975f9bbc1618c7,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4002707066554890638, guid: c994436c8689089429975f9bbc1618c7,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4002707066554890638, guid: c994436c8689089429975f9bbc1618c7,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4002707066554890638, guid: c994436c8689089429975f9bbc1618c7,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4002707066554890638, guid: c994436c8689089429975f9bbc1618c7,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4002707066554890638, guid: c994436c8689089429975f9bbc1618c7,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4002707066554890638, guid: c994436c8689089429975f9bbc1618c7,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4002707066554890638, guid: c994436c8689089429975f9bbc1618c7,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4002707066554890638, guid: c994436c8689089429975f9bbc1618c7,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4002707066554890638, guid: c994436c8689089429975f9bbc1618c7,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 1582937189982655951, guid: c994436c8689089429975f9bbc1618c7, type: 3}
+  m_SourcePrefab: {fileID: 100100000, guid: c994436c8689089429975f9bbc1618c7, type: 3}
+--- !u!1 &7847090418849763135 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4710673814894203125, guid: c994436c8689089429975f9bbc1618c7,
+    type: 3}
+  m_PrefabInstance: {fileID: 3294906260250009546}
+  m_PrefabAsset: {fileID: 0}

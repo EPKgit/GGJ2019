@@ -1,0 +1,105 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &2403365783556369334
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3259131530727876337}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96244d6465d6240e383db59a7579fd3c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cardName: Space Perfume
+  cardSuit: 3
+  cardImage: {fileID: 21300000, guid: 3d997b85c0ffe4ac899f450b1fc428aa, type: 3}
+  cardFlavorText: No one needs more than three Passives.
+  cardAbilityText: Trade this Item. Gain any 1 Item and 3 Fuel.
+  fuelCost: 0
+  fuelReward: 0
+  hopsReward: 0
+  extraRefuelReward: 0
+  CouldRefuelVersion: {fileID: 0}
+  mayRefuelAfter: 1
+  mayTradeAfter: 1
+  passiveEffect: 0
+  halfCard: {fileID: 0}
+  starterCard: 0
+--- !u!1001 &8591152789323486519
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 6486068766365250502, guid: 1cc19fb4a031c4f56964587e313f82f5,
+        type: 3}
+      propertyPath: m_Name
+      value: Space Perfume
+      objectReference: {fileID: 0}
+    - target: {fileID: 3229345998132681405, guid: 1cc19fb4a031c4f56964587e313f82f5,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3229345998132681405, guid: 1cc19fb4a031c4f56964587e313f82f5,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3229345998132681405, guid: 1cc19fb4a031c4f56964587e313f82f5,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3229345998132681405, guid: 1cc19fb4a031c4f56964587e313f82f5,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3229345998132681405, guid: 1cc19fb4a031c4f56964587e313f82f5,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3229345998132681405, guid: 1cc19fb4a031c4f56964587e313f82f5,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3229345998132681405, guid: 1cc19fb4a031c4f56964587e313f82f5,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3229345998132681405, guid: 1cc19fb4a031c4f56964587e313f82f5,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3229345998132681405, guid: 1cc19fb4a031c4f56964587e313f82f5,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3229345998132681405, guid: 1cc19fb4a031c4f56964587e313f82f5,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3229345998132681405, guid: 1cc19fb4a031c4f56964587e313f82f5,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 6789571248972939637, guid: 1cc19fb4a031c4f56964587e313f82f5, type: 3}
+  m_SourcePrefab: {fileID: 100100000, guid: 1cc19fb4a031c4f56964587e313f82f5, type: 3}
+--- !u!1 &3259131530727876337 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6486068766365250502, guid: 1cc19fb4a031c4f56964587e313f82f5,
+    type: 3}
+  m_PrefabInstance: {fileID: 8591152789323486519}
+  m_PrefabAsset: {fileID: 0}

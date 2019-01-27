@@ -827,9 +827,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d99965479ea65bf44aa00cc5b0aaedd9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  name: {fileID: 0}
-  effect: {fileID: 0}
-  art: {fileID: 0}
 --- !u!1001 &416372470
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2615,7 +2612,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2020412091}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 84af6e21251defe49b01b56ecaba1ef3, type: 3}
+  m_Script: {fileID: 11500000, guid: 5855c520f6c604bd691a0577eac576ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   allCards:
@@ -2624,7 +2621,7 @@ MonoBehaviour:
   - {fileID: 3357119397318824410, guid: 9cd5daf89735e9b4398a13c13a187e6b, type: 3}
   - {fileID: 3999508280734371362, guid: 6ae7a165114078349a01113b02a48e6b, type: 3}
   - {fileID: 4725642845691520200, guid: 174b6051de88dfd44a31b78681cb6001, type: 3}
-  bigCard: {fileID: 0}
+  bigCard: {fileID: 408279679}
 --- !u!4 &2020412093
 Transform:
   m_ObjectHideFlags: 0

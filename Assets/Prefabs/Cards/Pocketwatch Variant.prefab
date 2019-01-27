@@ -1,0 +1,106 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &1362931633102374337
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1481954675650097498}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44283d20dd017476583bf2030a994e71, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cardName: Pocketwatch
+  cardSuit: 3
+  cardImage: {fileID: 21300000, guid: af1f4a4256ea38644a0b303adf910796, type: 3}
+  cardFlavorText: Consistency is important.
+  cardAbilityText: 'Any 2 Items of the same suit. Gain any 2 Items. '
+  fuelCost: 0
+  fuelReward: 0
+  hopsReward: 0
+  extraRefuelReward: 0
+  CouldRefuelVersion: {fileID: 0}
+  mayRefuelAfter: 1
+  mayTradeAfter: 1
+  passiveEffect: 0
+  halfCard: {fileID: 0}
+  starterCard: 0
+  cardRewardCount: 0
+--- !u!1001 &6183258724209697199
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4710673814894203125, guid: c994436c8689089429975f9bbc1618c7,
+        type: 3}
+      propertyPath: m_Name
+      value: Pocketwatch
+      objectReference: {fileID: 0}
+    - target: {fileID: 4002707066554890638, guid: c994436c8689089429975f9bbc1618c7,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4002707066554890638, guid: c994436c8689089429975f9bbc1618c7,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4002707066554890638, guid: c994436c8689089429975f9bbc1618c7,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4002707066554890638, guid: c994436c8689089429975f9bbc1618c7,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4002707066554890638, guid: c994436c8689089429975f9bbc1618c7,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4002707066554890638, guid: c994436c8689089429975f9bbc1618c7,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4002707066554890638, guid: c994436c8689089429975f9bbc1618c7,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4002707066554890638, guid: c994436c8689089429975f9bbc1618c7,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4002707066554890638, guid: c994436c8689089429975f9bbc1618c7,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4002707066554890638, guid: c994436c8689089429975f9bbc1618c7,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4002707066554890638, guid: c994436c8689089429975f9bbc1618c7,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 1582937189982655951, guid: c994436c8689089429975f9bbc1618c7, type: 3}
+  m_SourcePrefab: {fileID: 100100000, guid: c994436c8689089429975f9bbc1618c7, type: 3}
+--- !u!1 &1481954675650097498 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4710673814894203125, guid: c994436c8689089429975f9bbc1618c7,
+    type: 3}
+  m_PrefabInstance: {fileID: 6183258724209697199}
+  m_PrefabAsset: {fileID: 0}

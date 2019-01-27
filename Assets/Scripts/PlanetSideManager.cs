@@ -28,12 +28,14 @@ public class PlanetSideManager : MonoBehaviour
 
     public void comeFromMapScreen(Planet p)
     {
+        Debug.Log("comefrom");
         planetScreen.sprite = p.background;
         gameObject.SetActive(true);
     }
 
     public void returnToMapScreen()
     {
+        Debug.Log("return");
         gameObject.SetActive(false);
         if(AudioManager.instance != null)
         {

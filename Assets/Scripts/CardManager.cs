@@ -14,14 +14,17 @@ public class CardManager : MonoBehaviour
     {
         cards = new List<GameObject>();
         yield return new WaitUntil( () => GameManager.instance != null);
+        yield return new WaitUntil( () => GameManager.instance.player != null);
         foreach(GameObject g in allCards)
         {
             GameObject temp = Instantiate(g, Vector3.one * 9999, Quaternion.identity, transform);
-            temp.GetComponent<HalfCard>().card.halfCard = temp;
+            GameObject temp2 = Instantiate(temp.GetComponent<HalfCard>().prefabCard, Vector3.one * 9999, Quaternion.identity, transform);
+            temp2.GetComponent<Card>().halfCard = temp;
+            temp.GetComponent<HalfCard>().card = temp2.GetComponent<Card>();
             cards.Add(temp);
             if(temp.GetComponent<HalfCard>().card.starterCard)
             {
-                GameManager.instance.player.playerHand.Add(temp.GetComponent<HalfCard>().card);
+                GameManager.instance.player.playerHand.Add(temp2.GetComponent<Card>());
             }
         }
     }

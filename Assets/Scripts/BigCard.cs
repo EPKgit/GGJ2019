@@ -26,7 +26,7 @@ public class BigCard : MonoBehaviour
         {
             return;
         }
-        name.text = c.name;
+        name.text = c.cardName;
         effect.text = c.cardAbilityText;
         art.sprite = c.cardImage;
     }

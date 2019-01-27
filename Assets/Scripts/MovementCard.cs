@@ -6,12 +6,9 @@ public class MovementCard : Card {
     public bool DoesHop = true; //does this involve hops
     public int hops;
 
-    public override Type cardType{
-        get{ return Type.MOVEMENT; }
-    }
-
     protected virtual void Start(){
         base.Start();
+        cardType = Type.MOVEMENT;
     }
 
     // CALL THIS TO KNOW WHERE YOU CAN MOVE TO
