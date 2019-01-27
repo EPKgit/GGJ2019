@@ -33,6 +33,14 @@ public class Planet : MonoBehaviour
         // trades = new List<Card>();
         // connections = new List<Planet>();
     }
+
+    public void AddCards(Card[] cards){
+        foreach(Card c in cards){
+            if(c != null){
+                trades.Add(new PlanetTradeCard{card = c, revealed = false});
+            }
+        }
+    }
     
     void Update()
     {

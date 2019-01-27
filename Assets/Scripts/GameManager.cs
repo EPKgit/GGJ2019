@@ -13,7 +13,7 @@ public class GameManager : MonoBehaviour
 
     public PlayerMovement playerMovement;
     public Player player;
-    private List<GameObject> planetList;
+    public List<GameObject> planetList;
     private float currentHandSize;
     private Card chosenCard;
 
