@@ -35,3 +35,20 @@ public class PairCostCard : TradeCard{
         return false; // never saw a suit twice
     }
 }
+
+public class MirrorCudeCard : PairCostCard{
+
+    new protected void Start(){
+        base.Start();
+        this.cardReward = new CardPred[]{new CardPred(), new CardPred(), new CardPred()};
+    }
+
+}
+
+public class PocketWatchCard : PairCostCard{
+
+    new protected void Start(){
+        base.Start();
+        this.cardReward = new CardPred[]{new CardPred(), new CardPred()};
+    }
+}
