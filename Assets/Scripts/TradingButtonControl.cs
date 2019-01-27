@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class TradingButtonControl : MonoBehaviour
 {
-    public Planet planet;
+    [HideInInspector] public Planet planet;
     public Player player;
 
     public void TradeButtonPressed()
@@ -17,6 +17,8 @@ public class TradingButtonControl : MonoBehaviour
         }
     }
 
+
+    //Only handles the regular transactions.
     public void TradeCardsAndFuel(List<Card> toPlayer, List<Card> toPlanet, int netFuel)
     {
         planet = PlayerMovement.instance.currentPlanet;
@@ -41,7 +43,7 @@ public class TradingButtonControl : MonoBehaviour
         //Removing from planet
         foreach (Card c in toPlayer)
         {
-            int index = planet.trades.FindIndex(x => x.cardName == c.cardName);
+            int index = planet.trades.FindIndex(x => x.card.cardName == c.cardName);
 
             if (index == -1)
             {
@@ -57,17 +59,15 @@ public class TradingButtonControl : MonoBehaviour
             player.playerHand.Add(c);
         }
 
+
+        //Eric please confirm this is how a planet's trades work.
         foreach (Card c in toPlanet)
         {
-            planet.trades.Add(c);
+            Planet.PlanetTradeCard ptc = new Planet.PlanetTradeCard();
+            ptc.revealed = true;
+            ptc.card = c;
+            planet.trades.Add(ptc);
         }
-        
-        
-    }
-
-    public void TradeValidityCheck()
-    {
-
     }
 
     private bool CurrentPlanetCheck()
