@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class NewCommerceManager : MonoBehaviour
 {
     public Player player;
-    public Planet planet;
+    [HideInInspector] public Planet planet;
 
     //For ability choosing phase.
     public GameObject AbilityChoiceMenu;
@@ -32,10 +32,13 @@ public class NewCommerceManager : MonoBehaviour
         abilityChoosingComplete = false;
         readyForTradeSetup = false;
         tradeMenuReady = false;
+
+        
         if (AbilityChoiceMenu.activeSelf == true)
         {
             AbilityChoiceMenu.SetActive(false);
         }
+        
         if (TradingMenu.activeSelf == true)
         {
             TradingMenu.SetActive(false);

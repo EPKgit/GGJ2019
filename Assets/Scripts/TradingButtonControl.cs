@@ -17,6 +17,10 @@ public class TradingButtonControl : MonoBehaviour
         }
     }
 
+    public void CheckValidTrade(TradeCard trade)
+    {
+    }
+
 
     //Only handles the regular transactions.
     public void TradeCardsAndFuel(List<Card> toPlayer, List<Card> toPlanet, int netFuel)
