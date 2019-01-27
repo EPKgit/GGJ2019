@@ -48,8 +48,12 @@ public class Card : MonoBehaviour
 
     public bool Usable(int fuel, List<Card> hand)
     {
-        Debug.Log("usable");
+        //Debug.Log("usable");
         //Check if we go over fuel cost.
+        if(cardType == Type.PASSIVE)
+        {
+            return false;
+        }
         if (this.fuelCost > fuel)
         {
             Debug.Log("Not enough fuel. Trade card not used.");

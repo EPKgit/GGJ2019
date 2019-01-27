@@ -15,6 +15,7 @@ public class GameManager : MonoBehaviour
     public Player player;
     private List<GameObject> planetList;
     private float currentHandSize;
+    private Card chosenCard;
 
     void Start()
     {
@@ -63,7 +64,7 @@ public class GameManager : MonoBehaviour
 
     public void setPlanets(List<GameObject> planets)
     {
-        Debug.Log("set planetls");
+        //Debug.Log("set planetls");
         planetList = planets;
         GameObject temp = GameObject.FindWithTag("Player");
         playerMovement = temp.GetComponent<PlayerMovement>();
@@ -74,29 +75,33 @@ public class GameManager : MonoBehaviour
 
     private bool pickedMoveOption;
 
-    public void setMoveOption()
+    public void setMoveOption(Card c)
     {
         pickedMoveOption = true;
+        chosenCard = c;
     }
 
     void CheckLegalMoves()
     {
         int index = 0;
-        Debug.Log(player.playerHand.Count);
+        //Debug.Log(player.playerHand.Count);
         foreach(Card c in player.playerHand)
         {
-            Debug.Log(c.cardName);
+            //Debug.Log(c.cardName);
             if(c.Usable(player.fuel, player.playerHand) && c.cardType == Card.Type.MOVEMENT)
             {
-                Debug.Log("true");
                 hand[index].GetComponent<Image>().enabled = true;
-                c.halfCard.GetComponent<Button>().onClick.AddListener(setMoveOption);
+                c.halfCard.GetComponent<Button>().onClick.AddListener( () => setMoveOption(c));
             }
             else
             {
-                Debug.Log("false");
                 hand[index].GetComponent<Image>().enabled = false;
             }
+            index++;
+        }
+        for(int x = index; x < hand.Length; ++x)
+        {
+            hand[x].GetComponent<Image>().enabled = false;
         }
     }
 
@@ -126,6 +131,14 @@ public class GameManager : MonoBehaviour
         currentHandSize = player.playerHand.Count;
     }
 
+    void SetAllSlotsOff()
+    {
+        for(int x = 0; x < hand.Length; ++x)
+        {
+            hand[x].GetComponent<Image>().enabled = false;
+        }
+    }
+
     void ResetListeners()
     {
         foreach(Card c in player.playerHand)
@@ -133,13 +146,18 @@ public class GameManager : MonoBehaviour
             c.halfCard.GetComponent<Button>().onClick.RemoveAllListeners();
         }
     }
+
     IEnumerator WaitForMoveInput()
     {
         yield return new WaitUntil( () => player.playerHand !=  null);
         yield return new WaitUntil( () => player.playerHand.Count != 0);
         CheckLegalMoves();
         yield return new WaitUntil( () => pickedMoveOption);
-        Debug.Log("MIOVINGKNSDF");
+        ResetListeners();
+        SetAllSlotsOff();
+        Debug.Log(chosenCard);
+        //HashSet<Planet> planetsAvail = 
+        //Debug.Log("MIOVINGKNSDF");
 
     }
 }

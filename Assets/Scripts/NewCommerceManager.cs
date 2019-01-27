@@ -172,7 +172,7 @@ public class NewCommerceManager : MonoBehaviour
             if (player.playerHand[i].cardType == Card.Type.TRADE)
             {
                 //Check if trade card is usable for player.
-                if (player.playerHand[i].Usable(player.fuel, player.playerHand) && player.playerHand[i].Type == Card.Type.TRADE)
+                if (player.playerHand[i].Usable(player.fuel, player.playerHand) && player.playerHand[i].cardType == Card.Type.TRADE)
                 {
                     UsableAbilityCards.Add(player.playerHand[i]);
                 }
@@ -204,7 +204,7 @@ public class NewCommerceManager : MonoBehaviour
 
     // TO BE CALLED BY THE CARD BUTTONS
     // TAKE THE ASSOCIATED DATA TYPE either PLAYER TRADE HAND OR PLANET TRADE HAND
-    public void CardClickedOn(Card card, GameObject owner){
+    public void CardClickedOn(Card card, GameObject owner, List<Card> UsableAbilityCards){
         if(!abilityChoosingComplete && UsableAbilityCards.Contains(card)){
             SetChosenTradeCard(card);
             TradeAbilityChosenPhase();
@@ -240,7 +240,7 @@ public class NewCommerceManager : MonoBehaviour
 
     // TO BE CALLED BY CANCEL TRADE
     public void LeaveTradeAbilityChosenPhase(){
-        Dubug.Log("Leaving Trade Ability Chosen Phase");
+        Debug.Log("Leaving Trade Ability Chosen Phase");
         AbilityChoiceMenu.SetActive(false);
         abilityChoosingComplete = false;
         readyForTradeSetup = false;

@@ -15,7 +15,7 @@ public class TradingButtonControl : MonoBehaviour
         {
             if(CheckValidTrade(comMan.chosenTradeCard, comMan.toPlayer,
                     comMan.toPlanet, player.fuel)){
-                TradeCardsAndFuel(toPlayer, toPlanet, -comMan.chosenTradeCard.fuelCost);
+                TradeCardsAndFuel(comMan.toPlayer, comMan.toPlanet, -comMan.chosenTradeCard.fuelCost);
                 comMan.EndCommercePhase();
             }else{
                 Debug.Log("Illegal Trade");
