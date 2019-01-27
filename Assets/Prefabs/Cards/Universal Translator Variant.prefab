@@ -1,0 +1,112 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &8309890952969069124
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6501687052420432476}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72895ccb8e04640f3be801d6bbe39428, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cardName: Universal Translator
+  cardSuit: 2
+  cardImage: {fileID: 21300000, guid: a2743cdd5a96749ffa05e6084e0497d6, type: 3}
+  cardFlavorText: Coordinate your Items carefully.
+  cardAbilityText: 1 Valuable Item. Gain any 1 Item; reveal all Items at 1 neighbor
+    planet.
+  fuelCost: 0
+  fuelReward: 0
+  hopsReward: 0
+  extraRefuelReward: 0
+  CouldRefuelVersion: {fileID: 0}
+  mayRefuelAfter: 1
+  mayTradeAfter: 1
+  halfCard: {fileID: 0}
+  starterCard: 0
+  PlanetsScouted: 1
+  CardsRevealed: 6
+--- !u!1001 &8544705097452923118
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3219587676086758066, guid: 920fa5c3c32294140ade55b9d9c3141f,
+        type: 3}
+      propertyPath: m_Name
+      value: Universal Translator
+      objectReference: {fileID: 0}
+    - target: {fileID: 6520528158445503433, guid: 920fa5c3c32294140ade55b9d9c3141f,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6520528158445503433, guid: 920fa5c3c32294140ade55b9d9c3141f,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6520528158445503433, guid: 920fa5c3c32294140ade55b9d9c3141f,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6520528158445503433, guid: 920fa5c3c32294140ade55b9d9c3141f,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6520528158445503433, guid: 920fa5c3c32294140ade55b9d9c3141f,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6520528158445503433, guid: 920fa5c3c32294140ade55b9d9c3141f,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6520528158445503433, guid: 920fa5c3c32294140ade55b9d9c3141f,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6520528158445503433, guid: 920fa5c3c32294140ade55b9d9c3141f,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6520528158445503433, guid: 920fa5c3c32294140ade55b9d9c3141f,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6520528158445503433, guid: 920fa5c3c32294140ade55b9d9c3141f,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6520528158445503433, guid: 920fa5c3c32294140ade55b9d9c3141f,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4548412376463480395, guid: 920fa5c3c32294140ade55b9d9c3141f,
+        type: 3}
+      propertyPath: cardName
+      value: Universal Translator
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 4548412376463480395, guid: 920fa5c3c32294140ade55b9d9c3141f, type: 3}
+  m_SourcePrefab: {fileID: 100100000, guid: 920fa5c3c32294140ade55b9d9c3141f, type: 3}
+--- !u!1 &6501687052420432476 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3219587676086758066, guid: 920fa5c3c32294140ade55b9d9c3141f,
+    type: 3}
+  m_PrefabInstance: {fileID: 8544705097452923118}
+  m_PrefabAsset: {fileID: 0}

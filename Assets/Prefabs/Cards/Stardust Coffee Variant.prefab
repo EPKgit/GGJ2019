@@ -1,22 +1,24 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &6779192807329294075
+--- !u!114 &8875661206186646003
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8516016085843292146}
+  m_GameObject: {fileID: 2048571903734808771}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 30af0c48772084f1294469351b452151, type: 3}
+  m_Script: {fileID: 11500000, guid: 34ad18285c64445b5a4ac5fc3ab6d0da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cardName: Engraved Pen
-  cardSuit: 2
-  cardImage: {fileID: 21300000, guid: 82b3cddac5e6a4f43a348a6c55d3adf3, type: 3}
-  cardFlavorText: You need the ideal collection of Items to settle happily.
-  cardAbilityText: Any 1 Item + 1 Fuel. Gain any 1 Item.
+  cardName: Stardust Coffee
+  cardSuit: 4
+  cardImage: {fileID: 21300000, guid: a71d9750742df49448e17bc0cfbe77ac, type: 3}
+  cardFlavorText: A hand's total Fuel costs and productions should approximately balance
+    out.
+  cardAbilityText: 0 Fuel. Move X Hops, but only Move through planets without Fuel;
+    when you land, you MUST Refuel (if available) or Settle
   fuelCost: 0
   fuelReward: 0
   hopsReward: 0
@@ -26,7 +28,10 @@ MonoBehaviour:
   mayTradeAfter: 1
   halfCard: {fileID: 0}
   starterCard: 0
---- !u!1001 &3995074825209216775
+  DoesTp: 0
+  DoesHop: 1
+  hops: 0
+--- !u!1001 &6715519788027039798
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -36,7 +41,7 @@ PrefabInstance:
     - target: {fileID: 4710673814894203125, guid: c994436c8689089429975f9bbc1618c7,
         type: 3}
       propertyPath: m_Name
-      value: Engraved Pen
+      value: Stardust Coffee
       objectReference: {fileID: 0}
     - target: {fileID: 4002707066554890638, guid: c994436c8689089429975f9bbc1618c7,
         type: 3}
@@ -93,38 +98,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1582937189982655951, guid: c994436c8689089429975f9bbc1618c7,
-        type: 3}
-      propertyPath: cardName
-      value: Engraved Pen
-      objectReference: {fileID: 0}
-    - target: {fileID: 1582937189982655951, guid: c994436c8689089429975f9bbc1618c7,
-        type: 3}
-      propertyPath: cardSuit
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1582937189982655951, guid: c994436c8689089429975f9bbc1618c7,
-        type: 3}
-      propertyPath: cardAbilityText
-      value: Any 1 Item + 1 Fuel. Gain any 1 Item
-      objectReference: {fileID: 0}
-    - target: {fileID: 1582937189982655951, guid: c994436c8689089429975f9bbc1618c7,
-        type: 3}
-      propertyPath: fuelCost
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1582937189982655951, guid: c994436c8689089429975f9bbc1618c7,
-        type: 3}
-      propertyPath: cardImage
-      value: 
-      objectReference: {fileID: 21300000, guid: 82b3cddac5e6a4f43a348a6c55d3adf3,
-        type: 3}
     m_RemovedComponents:
     - {fileID: 1582937189982655951, guid: c994436c8689089429975f9bbc1618c7, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: c994436c8689089429975f9bbc1618c7, type: 3}
---- !u!1 &8516016085843292146 stripped
+--- !u!1 &2048571903734808771 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4710673814894203125, guid: c994436c8689089429975f9bbc1618c7,
     type: 3}
-  m_PrefabInstance: {fileID: 3995074825209216775}
+  m_PrefabInstance: {fileID: 6715519788027039798}
   m_PrefabAsset: {fileID: 0}

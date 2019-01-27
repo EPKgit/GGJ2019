@@ -1,0 +1,112 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &6374138313511203540
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2086291524400435312}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17245b51c73c24fb3b330a4bd3582b04, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cardName: Geography Book
+  cardSuit: 2
+  cardImage: {fileID: 21300000, guid: 6139109af543e43d7981bf6364f487b6, type: 3}
+  cardFlavorText: Moving is stressful - no one needs more than three.
+  cardAbilityText: 1 Fuel. Move 1 Hop, then reveal 1 Item at each neigbhbor planet.
+  fuelCost: 0
+  fuelReward: 0
+  hopsReward: 0
+  extraRefuelReward: 0
+  CouldRefuelVersion: {fileID: 0}
+  mayRefuelAfter: 1
+  mayTradeAfter: 1
+  halfCard: {fileID: 0}
+  starterCard: 0
+  DoesTp: 0
+  DoesHop: 1
+  hops: 0
+--- !u!1001 &528264677740461263
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1992626207863139519, guid: f76e7e7ed092744ff8ff1da2f3a5a190,
+        type: 3}
+      propertyPath: m_Name
+      value: Geography Book
+      objectReference: {fileID: 0}
+    - target: {fileID: 7887191375121417668, guid: f76e7e7ed092744ff8ff1da2f3a5a190,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7887191375121417668, guid: f76e7e7ed092744ff8ff1da2f3a5a190,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7887191375121417668, guid: f76e7e7ed092744ff8ff1da2f3a5a190,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7887191375121417668, guid: f76e7e7ed092744ff8ff1da2f3a5a190,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7887191375121417668, guid: f76e7e7ed092744ff8ff1da2f3a5a190,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7887191375121417668, guid: f76e7e7ed092744ff8ff1da2f3a5a190,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7887191375121417668, guid: f76e7e7ed092744ff8ff1da2f3a5a190,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7887191375121417668, guid: f76e7e7ed092744ff8ff1da2f3a5a190,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7887191375121417668, guid: f76e7e7ed092744ff8ff1da2f3a5a190,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7887191375121417668, guid: f76e7e7ed092744ff8ff1da2f3a5a190,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7887191375121417668, guid: f76e7e7ed092744ff8ff1da2f3a5a190,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7313823684485906393, guid: f76e7e7ed092744ff8ff1da2f3a5a190,
+        type: 3}
+      propertyPath: cardName
+      value: Geography Book
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 7313823684485906393, guid: f76e7e7ed092744ff8ff1da2f3a5a190, type: 3}
+  m_SourcePrefab: {fileID: 100100000, guid: f76e7e7ed092744ff8ff1da2f3a5a190, type: 3}
+--- !u!1 &2086291524400435312 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1992626207863139519, guid: f76e7e7ed092744ff8ff1da2f3a5a190,
+    type: 3}
+  m_PrefabInstance: {fileID: 528264677740461263}
+  m_PrefabAsset: {fileID: 0}
