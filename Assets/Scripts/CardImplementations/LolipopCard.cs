@@ -1,4 +1,4 @@
-public class LopipopCard : MovementCard{
+public class LolipopCard : MovementCard{
 
     protected override void Start(){
         base.Start();
