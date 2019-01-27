@@ -21,10 +21,9 @@ public class Card : MonoBehaviour
     public int fuelCost;
     public CardPred[] cardCost;
 
-    public GameObject halfSizeCard;
-    public GameObject fullSizeCard;
+    public bool starterCard = false;
 
-    void Start()
+    protected void Start()
     {
         
     }
