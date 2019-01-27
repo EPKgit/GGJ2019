@@ -10,7 +10,11 @@ public class TradeCard : Card {
         get{ return Type.TRADE; }
     }
 
-    public new bool Usable(int fuel, List<Card> hand){
+    new protected void Start(){
+        base.Start();
+    }
+
+    public new virtual bool Usable(int fuel, List<Card> hand){
         int maxHandSize = 6; //TODO: WHAT THE FUCK IS THIS!!!!!!!!!!!
         if(!base.Usable(fuel, hand)){
             return false;
@@ -26,7 +30,7 @@ public class TradeCard : Card {
 
 
     // returns true in the total stated list of cards
-    public bool IsLegalTrade(int fuel, List<Card> give, List<Card> get){
+    public virtual bool IsLegalTrade(int fuel, List<Card> give, List<Card> get){
         if(!Usable(fuel, give)){
             return false;
         }
