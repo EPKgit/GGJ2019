@@ -8,6 +8,11 @@ public class Card : MonoBehaviour
     public enum Suit { MACHINE, DIP, VALUABLE, FOOD, TOY}
     public enum Type { NONE, MOVEMENT, TRADE, PASSIVE }
 
+    public static CardPred[] AnyOne = new CardPred[]{new CardPred()};
+    public static CardPred[] AnyTwo = new CardPred[]{new CardPred(),new CardPred()};
+    public static CardPred[] AnyThree = new CardPred[]{new CardPred(),new CardPred(),new CardPred()};
+    public static CardPred[] OneValuable = new CardPred[]{new SuitCardPred{Suit=Suit.VALUABLE}};
+
     public string cardName;
     public virtual Type cardType{
         get { return Type.NONE; }
@@ -20,15 +25,20 @@ public class Card : MonoBehaviour
     //For trading costs and transactions.
     public int fuelCost;
     public CardPred[] cardCost;
+    public int fuelReward;
+    public int hopsReward; // EXTRA HOPS GIVEN AS A REWARD AFTERS PLAYING THIS CARD
+    protected PlanetScouterAbility scouter;
+    public Card CouldRefuelVersion; //USE THIS CARD INSTEAD IFF COULD REFULE AT CURRENT WORLD
 
     public GameObject halfCard;
 
     public bool starterCard = false;
 
-    protected void Start()
+    protected virtual void Start()
     {
-        
+        CouldRefuelVersion = this;    
     }
+
     public bool Usable(int fuel, List<Card> hand)
     {
         //Check if we go over fuel cost.
@@ -61,6 +71,12 @@ public class Card : MonoBehaviour
         return true;
     }
 
+
+    // TO BE CALLED: AFTER RESOLVING EFFECT SUCCESSFULLY
+    public void ProcScoutAbility(Planet here){
+        scouter?.ScoutFrom(here);
+    }
+
     //public bool ownedByPlayer;
     //Ability cardAbility;
     //each UI card should have a Card datatype of the card itself
@@ -83,6 +99,12 @@ public class Card : MonoBehaviour
         public Suit Suit;
         public override bool CanPayWith(Card c){
             return c.cardSuit == Suit;
+        }
+    }
+
+    public class NotSuitCardPred : SuitCardPred{
+        public override bool CanPayWith(Card c){
+            return !base.CanPayWith(c);
         }
     }
 

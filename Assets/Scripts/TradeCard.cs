@@ -3,14 +3,13 @@ using UnityEngine;
 
 public class TradeCard : Card {
 
-    public int fuelReward;
     public CardPred[] cardReward;
 
     public override Type cardType{
         get{ return Type.TRADE; }
     }
 
-    new protected void Start(){
+    protected virtual void Start(){
         base.Start();
     }
 

@@ -87,12 +87,13 @@ public class NewCommerceManager : MonoBehaviour
 
         //Preparing planet trade hand.
         Debug.Log("12: Planet trade hand setup.");
+        planet.RevealCards(6); //WE'VE ARRIVED AT THE PLANET, IT CAN REVEAL IT'S CARDS NOW
         for (int i = 0; i < planet.trades.Count; ++i)
         {
             GameObject planetCard = Instantiate(Resources.Load("TradingCard")) as GameObject;
             planetCard.transform.SetParent(planetTradeHand.transform, false);
             planetCard.GetComponent<TradingPhaseCard>().owner = "Planet";
-            planetCard.GetComponent<TradingPhaseCard>().card = planet.trades[i];
+            planetCard.GetComponent<TradingPhaseCard>().card = planet.trades[i].card;
         }
 
 

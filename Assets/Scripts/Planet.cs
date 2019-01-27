@@ -10,7 +10,7 @@ public class Planet : MonoBehaviour
     public Sprite icon;
     public Sprite background;
     public AudioClip theme;
-    [HideInInspector]public List<Card> trades = new List<Card>();
+    [HideInInspector]public List<PlanetTradeCard> trades = new List<PlanetTradeCard>();
     [HideInInspector]public List<Planet> connections = new List<Planet>();
     public bool canRefuel;
     public string flavorText;
@@ -66,6 +66,28 @@ public class Planet : MonoBehaviour
     {
         GameManager.instance.ClickInput(this);
     }
+
+    // reveals up to i cards (pass 6 to reveal all)
+    // return the number of cards revealed
+    public int RevealCards(int i){
+        int revealed = 0;
+        foreach(PlanetTradeCard c in trades){
+            if(!c.revealed){
+                c.revealed = true;
+                revealed++;
+                if(revealed >= i){
+                    break;
+                }
+            }
+        }
+        return revealed;
+    }
+
+    public class PlanetTradeCard{
+        public bool revealed;
+        public Card card;
+    }
+
 }
 
 [CustomEditor(typeof(Planet))]
