@@ -97,5 +97,15 @@ PrefabInstance:
         a welcoming people known for their kindness and hard work. Saldia has warm
         temperatures, with a rainy season in the third quarter of the year. '
       objectReference: {fileID: 0}
+    - target: {fileID: 5582981795247776072, guid: 88262acb4c9b86c42aec08c1df09b9fe,
+        type: 3}
+      propertyPath: canRefuel
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5582981795247776072, guid: 88262acb4c9b86c42aec08c1df09b9fe,
+        type: 3}
+      propertyPath: Suit
+      value: 4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 88262acb4c9b86c42aec08c1df09b9fe, type: 3}

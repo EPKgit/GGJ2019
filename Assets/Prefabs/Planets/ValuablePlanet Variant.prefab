@@ -99,5 +99,10 @@ PrefabInstance:
         the year, the weather is quite temperate, though one season is rather chilly
         (allowing for the inhabitants to make use of their bearcoon fur coats). '
       objectReference: {fileID: 0}
+    - target: {fileID: 3301800816500797430, guid: 1c25f1657425d704a84fee3c9594fda1,
+        type: 3}
+      propertyPath: Suit
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1c25f1657425d704a84fee3c9594fda1, type: 3}
