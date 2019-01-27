@@ -2,8 +2,8 @@ using System.Collections.Generic;
 
 public class MovementCard : Card {
 
-    public bool tp = false; //does this involve a teleport
-    public bool hop = true; //does this involve hops
+    public bool DoesTp = false; //does this involve a teleport
+    public bool DoesHop = true; //does this involve hops
     public int hops;
 
     public override Type cardType{

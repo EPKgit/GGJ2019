@@ -5,7 +5,7 @@ using UnityEngine;
 public class Card : MonoBehaviour
 {
 
-    public enum Suit { MACHINE, DIP, VALUABLE, FOOD, TOY}
+    public enum Suit { NONE, MACHINE, DIP, VALUABLE, FOOD, TOY}
     public enum Type { NONE, MOVEMENT, TRADE, PASSIVE }
 
     public static CardPred[] AnyOne = new CardPred[]{new CardPred()};
@@ -27,8 +27,12 @@ public class Card : MonoBehaviour
     public CardPred[] cardCost;
     public int fuelReward;
     public int hopsReward; // EXTRA HOPS GIVEN AS A REWARD AFTERS PLAYING THIS CARD
+    public int extraRefuelReward; 
     protected PlanetScouterAbility scouter;
     public Card CouldRefuelVersion; //USE THIS CARD INSTEAD IFF COULD REFULE AT CURRENT WORLD
+    // DOES THIS CARD IMPOSE RESTRICTIONS ON YOUR NEXT PLANET ACTION
+    public bool mayRefuelAfter = true;
+    public bool mayTradeAfter = true; 
 
     public GameObject halfCard;
 
