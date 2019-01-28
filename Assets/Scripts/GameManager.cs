@@ -253,6 +253,7 @@ public class GameManager : MonoBehaviour
             }
             InputMove(chosenPlanet);
         }
+        player.ResolveSpecialAbilities(chosenCard);
 
     }
 
