@@ -1,0 +1,106 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &4555901405431137360
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4351545004035720633}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69c822df6086e4eae9294796fab65b78, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cardName: Cosmiflower
+  cardType: 2
+  cardSuit: 4
+  cardImage: {fileID: 21300000, guid: 5885e74a77775fa4eb4b4bb0d9f03a52, type: 3}
+  cardFlavorText: If you can eat, you can survive.
+  cardAbilityText: Any 1 Item + 2 Fuel. Gain any 2 Items.
+  fuelCost: 0
+  fuelReward: 0
+  hopsReward: 0
+  extraRefuelReward: 0
+  CouldRefuelVersion: {fileID: 0}
+  mayRefuelAfter: 1
+  mayTradeAfter: 1
+  passiveEffect: 0
+  halfCard: {fileID: 0}
+  starterCard: 0
+--- !u!1001 &9024201829556950348
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4710673814894203125, guid: c994436c8689089429975f9bbc1618c7,
+        type: 3}
+      propertyPath: m_Name
+      value: Cosmiflower
+      objectReference: {fileID: 0}
+    - target: {fileID: 4002707066554890638, guid: c994436c8689089429975f9bbc1618c7,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4002707066554890638, guid: c994436c8689089429975f9bbc1618c7,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4002707066554890638, guid: c994436c8689089429975f9bbc1618c7,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4002707066554890638, guid: c994436c8689089429975f9bbc1618c7,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4002707066554890638, guid: c994436c8689089429975f9bbc1618c7,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4002707066554890638, guid: c994436c8689089429975f9bbc1618c7,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4002707066554890638, guid: c994436c8689089429975f9bbc1618c7,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4002707066554890638, guid: c994436c8689089429975f9bbc1618c7,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4002707066554890638, guid: c994436c8689089429975f9bbc1618c7,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4002707066554890638, guid: c994436c8689089429975f9bbc1618c7,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4002707066554890638, guid: c994436c8689089429975f9bbc1618c7,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 1582937189982655951, guid: c994436c8689089429975f9bbc1618c7, type: 3}
+  m_SourcePrefab: {fileID: 100100000, guid: c994436c8689089429975f9bbc1618c7, type: 3}
+--- !u!1 &4351545004035720633 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4710673814894203125, guid: c994436c8689089429975f9bbc1618c7,
+    type: 3}
+  m_PrefabInstance: {fileID: 9024201829556950348}
+  m_PrefabAsset: {fileID: 0}
