@@ -5,7 +5,7 @@ using UnityEngine;
 public class CardManager : MonoBehaviour
 {
 
-    public int numCard = 75; //3 * number of plannets
+    public int copies = 3; //3 * number of plannets
 
     public GameObject[] allCards;
 
@@ -25,7 +25,7 @@ public class CardManager : MonoBehaviour
         yield return new WaitUntil( () => GameManager.instance.player != null);
         foreach(GameObject g in allCards)
         {
-            for(int i = 0; i < coppies; i++){
+            for(int i = 0; i < copies; i++){
                 GameObject temp = Instantiate(g, Vector3.one * 9999, Quaternion.identity, transform);
                 GameObject temp2 = Instantiate(temp.GetComponent<HalfCard>().prefabCard, Vector3.one * 9999, Quaternion.identity, transform);
                 temp2.GetComponent<Card>().halfCard = temp;
