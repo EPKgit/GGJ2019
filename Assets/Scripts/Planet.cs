@@ -16,11 +16,14 @@ public class Planet : MonoBehaviour
     public bool isStart = false;
     public string flavorText;
     public float spinSpeed = 0f;
+    public Sprite halfCardSprite;
+    public Sprite frame;
 
     private bool shouldDisplay;
     private Transform spriteTransform;
     private Canvas popupUI;
     private GameObject hoverSprite;
+    private GameObject[] hoverSlots;
 
     void Start()
     {
@@ -31,6 +34,14 @@ public class Planet : MonoBehaviour
         hoverSprite = transform.GetChild(1).gameObject;
         hoverSprite.SetActive(false);
         canRefuel = true;
+
+        hoverSlots = new GameObject[6];
+        int index = 0;
+        foreach(Transform child in transform.GetChild(2).GetChild(0))
+        {
+            hoverSlots[index++] = child.gameObject;
+        }
+        
         // trades = new List<Card>(); these should not matter
         // connections = new List<Planet>();
     }
@@ -46,6 +57,27 @@ public class Planet : MonoBehaviour
     void Update()
     {
         spriteTransform.Rotate(0f, 0f, spinSpeed * Time.deltaTime);
+        UpdateHover();
+    }
+
+    void UpdateHover()
+    {
+        int index = 0;
+        foreach(PlanetTradeCard c in trades)
+        {
+            if(c.revealed)
+            {
+                hoverSlots[index++].GetComponent<Image>().sprite = halfCardSprite;
+            }
+            else
+            {
+                hoverSlots[index++].GetComponent<Image>().sprite = c.card.cardImage;
+            }
+        }
+        for(int x = index; x < hoverSlots.Length; ++x)
+        {
+            hoverSlots[x].GetComponent<Image>().sprite = frame;
+        }
     }
 
     void OnMouseEnter()

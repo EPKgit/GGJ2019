@@ -67,7 +67,6 @@ public class CardManager : MonoBehaviour
                 s = suitReq;
             }
             List<Card> q = distroQueues[s];
-            Debug.Log(i+" "+  (q.Count-1));
             r[j] = q[q.Count-1];
             q.RemoveAt(q.Count-1);
             //handle running out of cards

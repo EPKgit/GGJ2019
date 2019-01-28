@@ -10,7 +10,7 @@ PrefabInstance:
     - target: {fileID: 3852609461186917121, guid: 10b30dde1f61b52409b5a222b34194fe,
         type: 3}
       propertyPath: m_Name
-      value: AddressBookHalf
+      value: AddressBookHalf Variant
       objectReference: {fileID: 0}
     - target: {fileID: 3852609461186917127, guid: 10b30dde1f61b52409b5a222b34194fe,
         type: 3}
@@ -117,5 +117,11 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 3852609461186917126, guid: 10b30dde1f61b52409b5a222b34194fe,
+        type: 3}
+      propertyPath: prefabCard
+      value: 
+      objectReference: {fileID: 3219587676086758066, guid: 920fa5c3c32294140ade55b9d9c3141f,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 10b30dde1f61b52409b5a222b34194fe, type: 3}
