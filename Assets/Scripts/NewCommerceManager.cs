@@ -61,6 +61,33 @@ public class NewCommerceManager : MonoBehaviour
         SetUpTradeMenu();
     }
 
+    void OnEnable()
+    {
+        abilityChosen = false;
+        abilityChoosingComplete = false;
+        readyForTradeSetup = false;
+        tradeMenuReady = false;
+
+        /*
+        if (AbilityChoiceMenu.activeSelf == true)
+        {
+            AbilityChoiceMenu.SetActive(false);
+        }
+        */
+
+        /*
+        if (TradingMenu.activeSelf == true)
+        {
+            TradingMenu.SetActive(false);
+        }
+        */
+
+        planet = PlayerMovement.instance.currentPlanet;
+
+        AbilityChoicePhase();
+        SetUpTradeMenu();
+    }
+
     private void Update()
     {
 
@@ -145,7 +172,7 @@ public class NewCommerceManager : MonoBehaviour
             if (player.playerHand[i].cardType == Card.Type.TRADE)
             {
                 //Check if trade card is usable for player.
-                if (player.playerHand[i].Usable(player.fuel, player.playerHand) && player.playerHand[i].cardType == Card.Type.TRADE)
+                if (player.mayTrade && player.playerHand[i].Usable(player.fuel, player.playerHand) && player.playerHand[i].cardType == Card.Type.TRADE)
                 {
                     UsableAbilityCards.Add(player.playerHand[i]);
                 }
@@ -227,7 +254,7 @@ public class NewCommerceManager : MonoBehaviour
 
     // TO BE CALLED BY THE REFUEL BUTTON
     public void Refule(){
-        if(planet.canRefuel){
+        if(planet.canRefuel && player.mayRefule){
             player.fuel += refuelValue + player.extaRefuel;
             player.extaRefuel = 0;
             planet.canRefuel = false;
@@ -268,6 +295,8 @@ public class NewCommerceManager : MonoBehaviour
     //      SUCCESSFUL TRADE
     //      SUCCESSFUL REFULE
     public void EndCommercePhase(){
+        player.mayRefule = true;
+        player.mayTrade = true;
         planetFix.returnToMapScreen();
     }
 
