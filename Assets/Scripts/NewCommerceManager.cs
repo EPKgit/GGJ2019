@@ -6,7 +6,6 @@ using UnityEngine.UI;
 public class NewCommerceManager : MonoBehaviour
 {
     public Player player;
-    public PlanetSideManager planetFix;
     [HideInInspector] public Planet planet;
 
     //For ability choosing phase.
@@ -151,9 +150,18 @@ public class NewCommerceManager : MonoBehaviour
 
         GameManager.instance.UpdatePlanetHand();
 
-        Debug.Log("13: Trade Menu setup is complete.");
+        foreach (Card c in player.playerHand)
+        {
+            Debug.Log(c.name);
+            c.halfCard.GetComponent<Button>().onClick.AddListener(() => CardClickedOn(c, c.transform.parent.parent.gameObject, player.playerHand));
+        }
+        foreach (Planet.PlanetTradeCard c in planet.trades)
+        {
+            Debug.Log(c.card.name);
+            c.card.halfCard.GetComponent<Button>().onClick.AddListener(() => CardClickedOn(c.card, c.card.halfCard.transform.parent.parent.gameObject, player.playerHand));
+        }
         tradeMenuReady = true;
-        
+        Debug.Log("13: Trade Menu setup is complete.");
     }
 
     public void SetAbilityChosen(bool active)
@@ -300,7 +308,7 @@ public class NewCommerceManager : MonoBehaviour
     public void EndCommercePhase(){
         player.mayRefule = true;
         player.mayTrade = true;
-        planetFix.returnToMapScreen();
+        PlanetSideManager.instance.returnToMapScreen();
     }
 
     

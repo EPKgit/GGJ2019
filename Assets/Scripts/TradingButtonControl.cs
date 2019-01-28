@@ -24,7 +24,8 @@ public class TradingButtonControl : MonoBehaviour
         }
     }
 
-    public bool CheckValidTrade(TradeCard trade, List<Card> toPlayer, List<Card> toPlanet, int fuel){
+    public bool CheckValidTrade(TradeCard trade, List<Card> toPlayer, List<Card> toPlanet, int fuel)
+    {
         return trade.IsLegalTrade(fuel, toPlanet, toPlayer);
     }
 
