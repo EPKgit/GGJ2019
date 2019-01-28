@@ -62,7 +62,7 @@ public class GameManager : MonoBehaviour
         PlayerMovement.instance.currentPlanet = p;
         CameraController.instance.point = p.transform.position;
         UpdatePlanetHand();
-        chosenPlanet = null;
+        //chosenPlanet = null;
 
 
         //p.HideGlow();
@@ -143,14 +143,14 @@ public class GameManager : MonoBehaviour
         currentHandSize = player.playerHand.Count;
     }
 
-    void UpdatePlanetHand()
+    public void UpdatePlanetHand()
     {
-        Debug.Log(1);
+        Debug.Log("PlanetHand is updating?");
         if(chosenPlanet == null)
         {
             return;
         }
-        Debug.Log(2);
+        Debug.Log("PlanetHand slotting.");
         int index = 0;
         foreach(GameObject slot in planetHand)
         {
@@ -172,6 +172,7 @@ public class GameManager : MonoBehaviour
             index++;
         }
     }
+    
 
     void SetAllSlotsOff()
     {

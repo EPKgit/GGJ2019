@@ -139,6 +139,7 @@ public class NewCommerceManager : MonoBehaviour
         //Preparing planet trade hand.
         Debug.Log("12: Planet trade hand setup.");
         planet.RevealCards(6); //WE'VE ARRIVED AT THE PLANET, IT CAN REVEAL IT'S CARDS NOW
+        /*
         for (int i = 0; i < planet.trades.Count; ++i)
         {
             GameObject planetCard = Instantiate(Resources.Load("TradingCard")) as GameObject;
@@ -146,7 +147,9 @@ public class NewCommerceManager : MonoBehaviour
             planetCard.GetComponent<TradingPhaseCard>().owner = "Planet";
             planetCard.GetComponent<TradingPhaseCard>().card = planet.trades[i].card;
         }
+        */
 
+        GameManager.instance.UpdatePlanetHand();
 
         Debug.Log("13: Trade Menu setup is complete.");
         tradeMenuReady = true;
