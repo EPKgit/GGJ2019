@@ -18,6 +18,7 @@ public class Planet : MonoBehaviour
     public float spinSpeed = 0f;
     public Sprite halfCardSprite;
     public Sprite frame;
+    public GameObject refuelIcon;
 
     private bool shouldDisplay;
     private Transform spriteTransform;
@@ -62,6 +63,7 @@ public class Planet : MonoBehaviour
 
     void UpdateHover()
     {
+        refuelIcon.SetActive(canRefuel);
         int index = 0;
         foreach(PlanetTradeCard c in trades)
         {
