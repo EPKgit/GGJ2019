@@ -31,6 +31,7 @@ public class NewCommerceManager : MonoBehaviour
 
     public int refuelValue = 4;
 
+    /*
     IEnumerator Start()
     {
         abilityChosen = false;
@@ -38,19 +39,19 @@ public class NewCommerceManager : MonoBehaviour
         readyForTradeSetup = false;
         tradeMenuReady = false;
 
-        /*
+        
         if (AbilityChoiceMenu.activeSelf == true)
         {
             AbilityChoiceMenu.SetActive(false);
         }
-        */
+        
 
-        /*
+        
         if (TradingMenu.activeSelf == true)
         {
             TradingMenu.SetActive(false);
         }
-        */
+        
 
         yield return new WaitUntil(() => PlayerMovement.instance != null);
         yield return new WaitUntil(() => PlayerMovement.instance.currentPlanet != null);
@@ -59,6 +60,7 @@ public class NewCommerceManager : MonoBehaviour
         AbilityChoicePhase();
         SetUpTradeMenu();
     }
+    */
 
     void OnEnable()
     {
@@ -152,12 +154,17 @@ public class NewCommerceManager : MonoBehaviour
 
         foreach (Card c in player.playerHand)
         {
-            Debug.Log(c.name);
-            c.halfCard.GetComponent<Button>().onClick.AddListener(() => CardClickedOn(c, c.transform.parent.parent.gameObject, player.playerHand));
+            c.halfCard.GetComponent<Button>().onClick.AddListener(() => CardClickedOn(c, c.halfCard.transform.parent.parent.gameObject, player.playerHand));
         }
         foreach (Planet.PlanetTradeCard c in planet.trades)
         {
-            Debug.Log(c.card.name);
+            Debug.Log(c.card.cardName);
+            if (c == null)
+                Debug.Log("1: not set to instance of object.");
+            if (c.card.halfCard.transform.parent.parent.gameObject == null)
+                Debug.Log("2: not set to instance of object.");
+            if (player.playerHand == null)
+                Debug.Log("3: not set to instance of object.");
             c.card.halfCard.GetComponent<Button>().onClick.AddListener(() => CardClickedOn(c.card, c.card.halfCard.transform.parent.parent.gameObject, player.playerHand));
         }
         tradeMenuReady = true;
